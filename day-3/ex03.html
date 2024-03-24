@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3 - Form Access Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/ex03.css">
+</head>
+
+<body>
+    <section class="login-form">
+        <form action="#" method="post">
+            <article class="row">
+                <div class="col-30">
+                    <label for="username">Username: </label>
+                </div>
+                <div class="col-70">
+                    <input type="text" id="username" name="username" required>
+                </div>
+            </article>
+            <article class="row">
+                <div class="col-30">
+                    <label for="password">Password: </label>
+                </div>
+                <div class="col-70">
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </article>
+
+            <article class="row">
+                <div class="col-30">
+                    <label for="city">City of Employment: </label>
+                </div>
+                <div class="col-70">
+                    <input type="text" id="city" name="city">
+                </div>
+            </article>
+
+            <article class="row">
+                <div class="col-30">
+                    <label for="webserver">Web server:</label>
+                </div>
+                <div class="col-70">
+                    <select id="webserver" name="webserver">
+                        <option value="0" hidden>Choose a server</option>
+                        <option value="1">Apache HTTP Server.</option>
+                        <option value="2">Internet Information Services</option>
+                        <option value="3">Nginx Web Server</option>
+                    </select>
+                </div>
+            </article>
+
+            <article class="row">
+                <div class="col-30">
+                    <label for="roles">Please specify your role: </label>
+                </div>
+                <div class="col-70">
+                    <label class="text-wrap">
+                        <input type="radio" name="roles" id="roles" value="1">Admin
+                    </label>
+                    <label class="text-wrap">
+                        <input type="radio" name="roles" id="roles" value="2">Engineer
+                    </label>
+                    <label class="text-wrap">
+                        <input type="radio" name="roles" id="roles" value="3">Manager
+                    </label>
+                    <label class="text-wrap">
+                        <input type="radio" name="roles" id="roles" value="4">Guest
+                    </label>
+                </div>
+            </article>
+
+            <article class="row">
+                <div class="col-30">
+                    <label for="services">Sigle Sign-on to the following:</label>
+                </div>
+                <div class="col-70">
+                    <label class="text-wrap">
+                        <input type="checkbox" name="services" id="services" value="1">Mail
+                    </label>
+                    <label class="text-wrap">
+                        <input type="checkbox" name="services" id="services" value="2">Payroll
+                    </label>
+                    <label class="text-wrap">
+                        <input type="checkbox" name="services" id="services" value="3">Self-service
+                    </label>
+                </div>
+            </article>
+            <div class="row">
+                <div class="align-btn">
+                    <button type="submit">Login</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </div>
+            </tr>
+            </table>
+        </form>
+    </section>
+    <div style="margin-top: 20px; margin-left: 20px; clear: both;">
+        <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.feedback-client {
+  width: 80%;
+  margin: 30px auto;
+}
+.feedback-client h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+}
+.feedback-client h2::after {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 48%;
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background-color: #627bff;
+}
+.feedback-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.feedback-item {
+  width: 30%;
+  display: flex;
+  padding-bottom: 30px;
+  padding-right: 50px;
+}
+.avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.message {
+  padding: 0 40px 0 25px;
+  color: gray;
+}
+.message .detail {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+.message h3.name {
+  font-size: 18px;
+  margin-top: 10px;
+}
