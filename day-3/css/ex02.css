@@ -7,13 +7,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .feedback-client {
-  width: 80%;
-  margin: 30px auto;
+  width: 1140px;
+  margin: 0 auto;
 }
 .feedback-client h2 {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 50px;
+  padding: 50px 0 0 0;
   text-align: center;
   position: relative;
 }
@@ -28,30 +28,39 @@ body {
   background-color: #627bff;
 }
 .feedback-list {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0;
 }
 .feedback-item {
+  width: 33%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.feedback-item .avatar {
   width: 30%;
   display: flex;
-  padding-bottom: 30px;
-  padding-right: 50px;
+  justify-content: center;
 }
-.avatar img {
+.feedback-item img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  display: block;
 }
-.message {
-  padding: 0 40px 0 25px;
-  color: gray;
+.feedback-item .message {
+  width: 70%;
 }
 .message .detail {
-  font-size: 14px;
   font-style: italic;
-  line-height: 1.5;
+  color: rgb(170, 169, 169);
 }
-.message h3.name {
-  font-size: 18px;
+.message .name {
   margin-top: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgb(147, 147, 147);
 }

@@ -33,8 +33,12 @@ select {
   padding: 4px 12px;
   border: 1px solid #ccc;
   resize: vertical;
+  border-radius: 5px;
 }
-
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0px 5px;
+}
 label {
   margin-bottom: 20px;
   display: block;
