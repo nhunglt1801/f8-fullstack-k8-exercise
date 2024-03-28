@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 30px auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.arrow-left {
+  margin-top: 20px;
+  margin-left: 20px;
+  clear: both;
+}
+.best-seller {
+  width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+.best-seller h2 {
+  font-size: 60px;
+  font-family: "Times New Roman", Times, serif;
+}
+.category-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.category-list label {
+  margin: 0 5px 10px 5px;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  padding: 10px 35px;
+}
+
+.product-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-item {
+  width: 25%;
+  text-align: center;
+}
+.product-image {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.product-image img {
+  object-fit: contain;
+}
+.product-image img:nth-child(2),
+.product-image:hover img:nth-child(1) {
+  display: none;
+}
+.product-image:hover img:nth-child(2) {
+  display: inline-block;
+}
+.product-image .btn-list {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+.product-image:hover .btn-list {
+  display: block;
+}
+.btn-list .icon-btn,
+.btn-list .text-btn {
+  display: flex;
+  justify-content: center;
+}
+.btn-list a {
+  color: white;
+}
+
+.btn-list .icon-btn div {
+  padding: 17px;
+  margin: 0 5px;
+  background-color: #3d4dba;
+  cursor: pointer;
+}
+.btn-list .icon-btn div > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.btn-list .icon-btn div:hover {
+  background-color: #28368c;
+}
+.btn-list .text-btn {
+  margin-top: 20px;
+}
+.btn-list .text-btn a {
+  padding: 10px 50px;
+  background-color: #3d4dba;
+}
+.btn-list .text-btn:hover a {
+  background-color: #28368c;
+}
+.product-rate i.yellow-star {
+  color: #f5c74c;
+}
+.product-rate i.gray-star {
+  color: gray;
+}
+.product-price {
+  font-weight: 600;
+}
+#skincare-products,
+#haircare-products,
+#cosmetics-products,
+#fragrance-products,
+#makeup-products {
+  display: none;
+}
+input#skincare:checked ~ .category-list > label[for="skincare"],
+input#haircare:checked ~ .category-list > label[for="haircare"],
+input#cosmetics:checked ~ .category-list > label[for="cosmetics"],
+input#fragrance:checked ~ .category-list > label[for="fragrance"],
+input#makeup:checked ~ .category-list > label[for="makeup"] {
+  background-color: #28368c;
+  color: white;
+}
+input#skincare:checked ~ div#skincare-products,
+input#haircare:checked ~ div#haircare-products,
+input#cosmetics:checked ~ div#cosmetics-products,
+input#fragrance:checked ~ div#fragrance-products,
+input#makeup:checked ~ div#makeup-products {
+  display: flex;
+}
