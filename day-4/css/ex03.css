@@ -93,7 +93,7 @@ a {
 .btn-list .icon-btn div {
   padding: 17px;
   margin: 0 5px;
-  background-color: #3d4dba;
+  background-color: #28368c;
   cursor: pointer;
 }
 .btn-list .icon-btn div > a {
@@ -104,17 +104,17 @@ a {
   height: 100%;
 }
 .btn-list .icon-btn div:hover {
-  background-color: #28368c;
+  background-color: #3d4dba;
 }
 .btn-list .text-btn {
   margin-top: 20px;
 }
 .btn-list .text-btn a {
   padding: 10px 50px;
-  background-color: #3d4dba;
+  background-color: #28368c;
 }
 .btn-list .text-btn:hover a {
-  background-color: #28368c;
+  background-color: #3d4dba;
 }
 .product-rate i.yellow-star {
   color: #f5c74c;
