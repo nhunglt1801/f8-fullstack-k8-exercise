@@ -19,18 +19,20 @@ body {
   width: fit-content;
   margin: 0 auto;
 }
-
+.booking h3,
+.booking h2 {
+  text-align: center;
+  color: #392516;
+}
 .booking h3 {
   font-size: 24px;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
-  text-align: center;
 }
 
 .booking h2 {
   font-size: 45px;
   font-family: "Alfa Slab One", serif;
-  text-align: center;
 }
 
 .booking-form input,
