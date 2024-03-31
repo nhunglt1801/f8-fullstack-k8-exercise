@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+.services {
+  width: 1140px;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.services h2 {
+  font-size: 3.2rem;
+}
+.services h2,
+.category-item h3 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.services > p {
+  margin-bottom: 80px;
+}
+.services .category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.category-list .category-item {
+  width: 30%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.152);
+}
+.category-item div.icon-border {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #f1a83a;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 0;
+}
+.category-item i {
+  color: #f1a83a;
+  font-size: 4.5rem;
+}
+.category-item h3 {
+  margin: 30px;
+  font-size: 3.4rem;
+}
+.category-item p {
+  color: #a3a2a2;
+}
+.category-item button {
+  margin-top: 30px;
+  color: #fff;
+  padding: 15px 25px;
+  background-color: #f1a83a;
+  border: none;
+  cursor: pointer;
+}
