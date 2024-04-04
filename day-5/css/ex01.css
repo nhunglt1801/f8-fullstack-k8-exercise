@@ -35,7 +35,8 @@ body {
   font-size: 4rem;
   padding: 25px;
 }
-.bg-text strong {
+.bg-text p {
+  font-weight: 700;
   font-size: 1.5rem;
 }
 .bg-text a {

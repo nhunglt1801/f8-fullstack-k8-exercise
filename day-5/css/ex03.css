@@ -63,6 +63,10 @@ body {
 }
 .category-item p {
   color: #a3a2a2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .category-item button {
   margin-top: 30px;

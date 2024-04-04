@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/ex01.css">
+</head>
+
+<body>
+    <section class="form-container">
+        <h2 class="form-heading">Hey there</h2>
+        <p class="form-description">
+            <span>We'd like to hear from you.</span> Send us your message or just
+            say hy with our contact form or directly via phone, we love to chat.
+        </p>
+        <form action="#" method="post" class="contact-form">
+            <div class="input-group">
+                <input type="text" name="name" id="name" placeholder="Your name" required>
+                <p>Enter your name</p>
+                <label for="name"><i class="fa-solid fa-user"></i></label>
+                <div class="icon-star"><i class="fa-solid fa-star"></i></div>
+                <div class="icon-x"><i class="fa-solid fa-x"></i></div>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" id="email" placeholder="your@domain.com" required>
+                <p>Enter your email</p>
+                <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                <div class="icon-star"><i class="fa-solid fa-star"></i></div>
+                <div class="icon-x"><i class="fa-solid fa-x"></i></div>
+            </div>
+            <div class="input-group">
+                <input type="tel" name="phone" id="phone" placeholder="+44 00 123" required>
+                <p>Enter your phone</p>
+                <label for="phone"><i class="fa-solid fa-mobile-screen"></i></label>
+                <div class="icon-star"><i class="fa-solid fa-star"></i></div>
+                <div class="icon-x"><i class="fa-solid fa-x"></i></div>
+            </div>
+            <div class="input-group select-custom">
+                <select name="subject" id="subject">
+                    <option value="0" hidden>Subject</option>
+                    <option value="1">HTML CSS</option>
+                    <option value="2">Javascript</option>
+                    <option value="3">NodeJS</option>
+                </select>
+                <p>Choose subject</p>
+                <label for="subject"><i class="fa-solid fa-book"></i></label>
+            </div>
+            <div class="input-group">
+                <textarea name="message-textarea" id="message-textarea" cols="30" rows="10"
+                    placeholder="Message"></textarea>
+                <p>Enter your message</p>
+                <label for="message-textarea"><i class="fa-regular fa-message"></i></label>
+                <div class="icon-star"><i class="fa-solid fa-star"></i></div>
+                <div class="icon-x"><i class="fa-solid fa-x"></i></div>
+            </div>
+            <div class="checkbox-btn-group">
+                <div class="check-box">
+                    <input type="checkbox" name="send-message" id="send-message" checked hidden>
+                    <span class="checkbox-custom">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    <label for="send-message">
+                        Send me a copy of this message
+                    </label>
+                </div>
+                <button class="btn">SEND</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

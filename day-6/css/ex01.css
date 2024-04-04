@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #c1c1c1;
+  background-color: #ccc;
+}
+.form-container {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.form-heading {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+.form-description {
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 1.6em;
+}
+.form-description span {
+  color: red;
+}
+.input-group {
+  position: relative;
+  height: 100%;
+  margin-bottom: 1.3em;
+}
+input:not(input[type="checkbox"]),
+select,
+select option,
+textarea {
+  width: 100%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+textarea {
+  resize: none;
+}
+input:not(input[type="checkbox"]):focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+.input-group input:not(input[type="checkbox"]),
+.input-group select,
+.input-group textarea {
+  padding-left: 5em;
+}
+.input-group input::placeholder,
+.input-group select::placeholder,
+.input-group textarea::placeholder {
+  color: #c1c1c1;
+  font-size: 1.6rem;
+}
+.input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3em;
+  height: 100%;
+  background-color: #e5e5e5;
+  color: #fff;
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.8rem;
+  border-radius: 3px;
+}
+.input-group label[for="message-textarea"] {
+  height: 98%;
+}
+.input-group:hover input,
+.input-group:hover select,
+.input-group:hover textarea {
+  border: 1px solid #000;
+}
+.input-group:hover input ~ label,
+.input-group:hover select ~ label,
+.input-group:hover textarea ~ label,
+.input-group input:focus ~ label,
+.input-group select:focus ~ label,
+.input-group textarea:focus ~ label {
+  background: #000;
+}
+.input-group p {
+  display: none;
+  position: absolute;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+  top: -60px;
+  left: 30px;
+}
+.input-group p::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  transform: rotate(45deg);
+}
+.select-custom::before {
+  content: "\25B2";
+  position: absolute;
+  top: -7px;
+  right: 0;
+  padding: 1em;
+  pointer-events: none;
+}
+.select-custom::after {
+  content: "\25BC";
+  position: absolute;
+  top: 7px;
+  right: 0;
+  padding: 1em;
+  pointer-events: none;
+}
+.input-group input:focus ~ p,
+.input-group select:focus ~ p,
+.input-group textarea:focus ~ p {
+  display: block;
+}
+.input-group .icon-star,
+.input-group .icon-x {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 3em;
+  height: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+.input-group .icon-x {
+  display: none;
+}
+.input-group input:focus ~ .icon-star,
+.input-group textarea:focus ~ .icon-star {
+  display: none;
+}
+
+.input-group input:focus ~ .icon-x,
+.input-group textarea:focus ~ .icon-x {
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox-btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.check-box {
+  display: flex;
+  align-items: center;
+}
+.checkbox-custom {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #e5e5e5;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.checkbox-custom i {
+  color: #000;
+  display: none;
+}
+input[type="checkbox"]:checked + .checkbox-custom i {
+  display: block;
+}
+input[type="checkbox"]:checked ~ label {
+  color: #000;
+}
+.btn {
+  text-transform: uppercase;
+  border: none;
+  color: #fff;
+  padding: 1em 2.5em;
+  background: red;
+}

@@ -27,6 +27,9 @@ body {
   color: #fff;
   font-size: 1.8rem;
 }
+.question-item label.question-title:hover {
+  cursor: pointer;
+}
 .question-item label.question-title i {
   margin-right: 5px;
 }
