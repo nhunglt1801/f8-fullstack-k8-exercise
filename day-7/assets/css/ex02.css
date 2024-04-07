@@ -1,0 +1,181 @@
+html {
+  font-size: 62.5%;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+body {
+  background: #ccc no-repeat
+    url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg) center/
+    cover;
+  background-attachment: fixed;
+  font-size: 1.6rem;
+  color: #717171;
+}
+
+/* form-login style */
+.form-login {
+  max-width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.form-login-wrapper {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 2px #ccc;
+}
+
+/* form-description style */
+.form-description {
+  width: 40%;
+  color: #fff;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 10px 0 0 10px;
+}
+.form-description h2 {
+  font-size: 3rem;
+}
+
+.form-description h2 span {
+  background: #fff;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin-right: 10px;
+}
+.form-description p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin: 30px 0;
+}
+a.readmore-btn {
+  display: inline-block;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+a.readmore-btn:hover {
+  color: #fff;
+}
+
+.social-list {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.social-list li a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+.social-list li a:hover {
+  background-color: #ea544c;
+}
+
+/* form-main style */
+.form-main {
+  width: 60%;
+  background: #fff;
+  padding: 40px;
+  border-radius: 0 10px 10px 0;
+}
+.form-main h3,
+.form-footer {
+  text-align: center;
+}
+.form-main h3 {
+  font-size: 2.5rem;
+  color: #272323;
+  margin-bottom: 30px;
+}
+
+.form-main h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin: 15px auto 0;
+}
+
+input.form-field {
+  width: 100%;
+  padding: 15px 25px;
+  text-align: left;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: inherit;
+  font-family: inherit;
+  box-shadow: 0 1px 5px 1px #d6d6d6d5;
+  border-radius: 5px;
+}
+.form-option-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.form-remember-me {
+  display: flex;
+  align-items: center;
+}
+.form-remember-me label {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.submit-btn {
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 15px 20px;
+}
+
+/* form-footer style */
+.form-footer {
+  margin-top: 20px;
+}
+.form-forgot-password a:hover,
+.form-footer a {
+  text-decoration: underline;
+}
+
+/* style chung */
+.btn {
+  font-size: inherit;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.readmore-btn:hover,
+.social-list li a,
+.submit-btn:hover {
+  background-color: #c9443d;
+}
+
+.form-description,
+.form-main h3::after,
+.submit-btn {
+  background-color: #ff574d;
+}
+
+.form-description h2 span,
+a.readmore-btn,
+.form-main h3 span,
+.form-forgot-password a:hover,
+.form-footer a:hover {
+  color: #ff574d;
+}
