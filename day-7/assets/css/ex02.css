@@ -5,9 +5,7 @@ html {
   line-height: 1.5;
 }
 body {
-  background: #ccc no-repeat
-    url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg) center/
-    cover;
+  background: no-repeat url(../img/login-bg2.jpg) center/ cover #ccc;
   background-attachment: fixed;
   font-size: 1.6rem;
   color: #717171;
