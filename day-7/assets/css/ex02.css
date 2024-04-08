@@ -164,7 +164,7 @@ input.form-field {
   margin-top: 20px;
 }
 .form-forgot-password a:hover,
-.form-footer a {
+.form-footer a:hover {
   text-decoration: underline;
 }
 
