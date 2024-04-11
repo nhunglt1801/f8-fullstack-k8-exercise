@@ -127,9 +127,12 @@ a {
   -o-transform: translateX(-50%);
 }
 
-.menu-item:hover .menu-link {
+.menu-item:hover .menu-link,
+.active-link {
   color: var(--header-color);
 }
-.menu-item:hover .menu-link::after {
+
+.menu-item:hover .menu-link::after,
+.active-link.menu-link::after {
   display: block;
 }
