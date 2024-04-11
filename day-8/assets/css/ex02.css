@@ -128,7 +128,7 @@ a {
 }
 
 .menu-item:hover .menu-link,
-.active-link {
+.menu-link.active-link {
   color: var(--header-color);
 }
 
