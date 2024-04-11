@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --header-color: #bf4240;
+  --text-color: #3f3424;
+  --text-font: "Asap", sans-serif;
+  --price-font: "Oswald", sans-serif;
+  --profile-font: "Oswald", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+  font-family: var(--text-font);
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+a {
+  color: var(--text-color);
+}
+.profile {
+  background: #ccc no-repeat url(../img/Landmark81banner.jpg) center / cover;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.profile-box {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  z-index: 2;
+}
+.profile-img {
+  width: 35%;
+  display: flex;
+  align-self: end;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: #0000003a;
+  z-index: 1;
+}
+.profile-img a img {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 50px 50px 30px;
+  border-radius: 5px 5px 0 0;
+}
+.profile-info {
+  width: 65%;
+  color: #fff;
+  margin-left: 20px;
+}
+.profile-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.profile-desc {
+  display: flex;
+  justify-content: start;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.profile-founded-year {
+  margin-right: 30px;
+}
+.profile-founded-year span,
+.profile-project-number span {
+  font-size: 2.5rem;
+  font-family: var(--profile-font);
+}
+
+.profile-navbar {
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid #ccc;
+}
+.menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+.menu-item {
+}
+.menu-link {
+  display: block;
+  padding: 10px 20px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+}
+.menu-link:link,
+.menu-link:active {
+  color: var(--text-color);
+}
+.menu-link::after {
+  content: "";
+  display: none;
+  width: calc(100% - 40px);
+  height: 3px;
+  background-color: var(--header-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.menu-item:hover .menu-link {
+  color: var(--header-color);
+}
+.menu-item:hover .menu-link::after {
+  display: block;
+}

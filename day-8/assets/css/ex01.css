@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+:root {
+  --header-color: #bf4240;
+  --text-color: #3f3424;
+  --text-font: "Asap", sans-serif;
+  --price-font: "Oswald", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: var(--text-font);
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+.header {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  background: #ccc no-repeat url("../img/ha-noi-melody-residences-cover.jpg")
+    center / cover;
+  position: relative;
+}
+.banner-box {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  max-width: 800px;
+  padding: 40px 40px 60px;
+  background-color: #ffffffbe;
+  border-radius: 5px;
+  transform: translate(-20%, -50%);
+  -webkit-transform: translate(-20%, -50%);
+  -moz-transform: translate(-20%, -50%);
+  -ms-transform: translate(-20%, -50%);
+  -o-transform: translate(-20%, -50%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.banner-header {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--header-color);
+}
+.banner-desc {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 15px 0;
+}
+.banner-address {
+  font-size: 2rem;
+}
+
+.banner-price {
+  position: absolute;
+  right: 30px;
+  bottom: -30px;
+  color: #fff;
+  font-family: var(--price-font);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--header-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
