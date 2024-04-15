@@ -70,9 +70,20 @@ body {
 .form-input select {
   padding-top: 0;
   color: inherit;
+  appearance: none;
 }
 .form-input select option {
   color: #000;
+}
+.select-option {
+  position: relative;
+}
+.select-option i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 }
 .form-input textarea {
   padding-top: 25px;
