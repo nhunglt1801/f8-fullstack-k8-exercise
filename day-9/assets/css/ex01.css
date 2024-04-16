@@ -127,7 +127,8 @@ body {
   transform: translate(-50%, -50%);
   color: #fff;
 }
-.background-color h2 {
+.background-color span {
+  display: block;
   background-image: url("https://fastly.picsum.photos/id/374/400/600.jpg?hmac=WUWnQrKmigtqVybKQ8fduYWsfhfyFV565EeVnBL8f3U");
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
