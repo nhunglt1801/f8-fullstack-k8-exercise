@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --text-font: "Roboto", sans-serif;
+  --text-color: #fff;
+  --text-nav-color: #31a8f7;
+  --background-color: #31a8f7;
+}
+html {
+  font-size: 62.5%;
+  font-family: var(--text-font);
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1.6rem;
+}
+/* content-wrap */
+.content-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  text-align: right;
+  padding-right: 150px;
+}
+.content-text h1 {
+  font-size: 4.5rem;
+  padding-bottom: 50px;
+}
+.content-text p {
+  font-size: 2rem;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+.content-text p > span {
+  display: inline-block;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+
+/* navbar-wrap */
+.navbar-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  border-bottom-right-radius: 999px;
+  background: #fff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.navbar-wrap .navbar-icon-list {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  font-size: 3rem;
+  color: var(--text-nav-color);
+  cursor: pointer;
+  z-index: 1;
+}
+.navbar-icon-list .icon-item {
+  position: absolute;
+}
+.navbar-icon-list .icon-item:first-of-type {
+  opacity: 1;
+  transform: rotate(0);
+  transition: all 0.3s ease;
+}
+.navbar-icon-list .icon-item:last-of-type {
+  opacity: 0;
+  transform: rotate(-180deg);
+  transition: all 0.3s ease;
+}
+#open-navbar:checked ~ .navbar-wrap {
+  width: calc(100vw + 500px);
+  height: calc(100vh + 500px);
+}
+#open-navbar:checked ~ .navbar-wrap .navbar {
+  visibility: visible;
+  opacity: 1;
+}
+#open-navbar:checked ~ .navbar-wrap .navbar-icon-list .icon-item:first-of-type {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+#open-navbar:checked ~ .navbar-wrap .navbar-icon-list .icon-item:last-of-type {
+  transform: rotate(0);
+  opacity: 1;
+}
+.navbar-wrap .navbar {
+  margin: 70px 0;
+  width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.navbar .navbar-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.navbar-list .navbar-item > a {
+  display: block;
+  padding: 10px 50px;
+  color: var(--text-nav-color);
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar-item > a:focus {
+  background: #e6e6e6;
+  color: #000;
+}
