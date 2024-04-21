@@ -368,13 +368,11 @@ body {
 
 /*  feature, feature-2 style */
 /* common style */
-.feature-wrapper {
+.feature-wrapper,
+.feature-2-wrapper {
   padding: 50px 0;
 }
-.feature-content-img,
-.feature-content {
-  padding: 0 10px;
-}
+
 .feature-img {
   max-height: 700px;
   width: auto;
