@@ -89,11 +89,13 @@ body {
   color: var(--text-color);
   font-size: 1.5rem;
 }
-.navbar-menu .navbar-nav {
+.navbar-menu .menu {
+  flex-grow: 1;
+}
+.menu .navbar-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
 }
 .nav-link {
   display: block;
