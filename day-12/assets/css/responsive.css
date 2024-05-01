@@ -153,6 +153,9 @@
   .navbar .navbar-menu {
     display: none;
   }
+  .logo-link {
+    margin-right: 0;
+  }
   .btn-menu {
     display: block;
   }
