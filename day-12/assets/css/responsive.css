@@ -313,8 +313,17 @@
   .btn-process-text {
     font-size: 1.3rem;
   }
-  /* .service-wrapper .container {
-    padding-right: 0;
-    padding-left: 0;
-  } */
+  .cta-img {
+    max-width: 200px;
+  }
+  .cta-content {
+    margin: 70px 0 0;
+  }
+  .cta-content-para {
+    margin-bottom: 40px;
+  }
+  .cta-content-btn-wrap {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
 }
