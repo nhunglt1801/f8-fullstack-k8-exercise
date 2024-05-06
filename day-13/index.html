@@ -37,8 +37,8 @@
                             </p>
                             <!-- landing-info-text -->
                             <div class="tab-switch">
-                                <label class="tab-switch-btn" for="input-login">Login</label>
-                                <label class="tab-switch-btn" for="input-register">Register</label>
+                                <label class="tab-switch-btn" id="btn-login" for="input-login">Login</label>
+                                <label class="tab-switch-btn" id="btn-register" for="input-register">Register</label>
                             </div>
                             <!-- end .tab-switch -->
                         </div>
@@ -53,7 +53,8 @@
                                 <form class="form">
                                     <div class="form-field">
                                         <div class="form-item">
-                                            <input type="text" name="login-username" id="login-username" required>
+                                            <input type="text" name="login-username" id="login-username" autofocus
+                                                required>
                                             <label for="login-username">Username or Email</label>
                                         </div>
                                     </div>
@@ -174,6 +175,21 @@
             </div>
         </section>
     </div>
+    <script>
+        document.onload = () => {
+            document.getElementById("login-username").focus();
+        }
+        document.getElementById("btn-register").onclick = () => {
+            setTimeout(() => {
+                document.getElementById("register-email").focus();
+            }, 200);
+        }
+        document.getElementById("btn-login").onclick = () => {
+            setTimeout(() => {
+                document.getElementById("login-username").focus();
+            }, 200);
+        }
+    </script>
 </body>
 
 </html>
