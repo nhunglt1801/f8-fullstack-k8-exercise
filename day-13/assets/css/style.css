@@ -385,19 +385,19 @@ input#input-login:checked ~ .landing-content .landing-form .form-login,
 input#input-register:checked ~ .landing-content .landing-form .form-register {
   display: block;
 }
+/* End  .landing-form */
 
+/* Responsive */
 @media screen and (max-width: 500px) {
-  .landing-info .tab-switch {
-    width: 98%;
-  }
-  .landing-info .tab-switch .tab-switch-btn {
-    width: 50%;
-  }
   .landing-info .landing-info-title {
     font-size: 5.6rem;
   }
   .landing-info .tab-switch {
+    width: 98%;
     margin-top: 20px;
+  }
+  .landing-info .tab-switch .tab-switch-btn {
+    width: 50%;
   }
   .landing-form {
     margin-top: 60px;
@@ -424,7 +424,6 @@ input#input-register:checked ~ .landing-content .landing-form .form-register {
     width: 490px;
   }
 }
-/* Responsive */
 @media screen and (min-width: 1365px) {
   .landing {
     position: fixed;
