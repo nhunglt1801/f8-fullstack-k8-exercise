@@ -1,6 +1,9 @@
 /*
 *  html5resetcss
 */
+*,
+*::after,
+*::before,
 html,
 body,
 div,
@@ -77,6 +80,7 @@ video {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  box-sizing: border-box;
 }
 body {
   line-height: 1;
