@@ -237,6 +237,7 @@ ol {
   padding: 54px 0 0 58px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .sidebar .heading {
   margin-top: 60px;
@@ -268,6 +269,17 @@ ol {
 .sidebar .nav .nav-item:hover {
   background: #ebebeb;
 }
+.sidebar .close-menu {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 4rem;
+  cursor: pointer;
+}
+.sidebar .close-menu:hover {
+  color: red;
+}
 
 .header {
   grid-area: header;
@@ -279,18 +291,18 @@ ol {
   margin-right: 26px;
   display: none;
 }
-.header .searh-form {
+.header .search-form {
   display: flex;
   align-items: center;
   column-gap: 18px;
   margin-right: auto;
 }
-.header .searh-form .search {
+.header .search-form .search {
   font-weight: 600;
   background: #fff;
   font-size: 1.8rem;
 }
-.header .searh-form .search::placeholder {
+.header .search-form .search::placeholder {
   color: rgba(0, 0, 0, 0.2);
 }
 .header .nav {
@@ -326,9 +338,11 @@ ol {
 .header .btn-menu {
   background: none;
   font-size: 2.5rem;
-  cursor: pointer;
   margin-left: 26px;
   display: none;
+}
+.header .btn-menu label {
+  cursor: pointer;
 }
 
 .chat-btn {
@@ -368,9 +382,6 @@ ol {
   }
 }
 @media screen and (max-width: 1399px) {
-  .wrapper-inner {
-    padding-right: 20px;
-  }
   .chat-btn .text {
     display: none;
   }
@@ -380,6 +391,7 @@ ol {
 }
 @media screen and (max-width: 1199px) {
   .wrapper-inner {
+    max-width: 1140px;
     padding: 0 15px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto repeat(4, 1fr);
@@ -392,13 +404,12 @@ ol {
     display: block;
   }
   .sidebar {
-    position: absolute;
-    top: 0%;
+    position: fixed;
+    top: -30%;
     left: 50%;
-    width: 70%;
+    width: 60%;
     translate: -50% -50%;
     background: #fff;
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10px;
@@ -426,6 +437,9 @@ ol {
     padding: 6px 10px;
     column-gap: 6px;
   }
+  .sidebar .close-menu {
+    display: block;
+  }
   input#menu-toggle:checked ~ .sidebar {
     top: 30%;
     opacity: 1;
@@ -444,9 +458,6 @@ ol {
     position: relative;
     margin-bottom: 30px;
   }
-  .header .searh-form {
-    display: flex;
-  }
   .header .nav {
     position: absolute;
     bottom: 0;
@@ -456,7 +467,7 @@ ol {
 }
 @media screen and (max-width: 767px) {
   .wrapper-inner {
-    max-width: 720px;
+    max-width: 650px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto repeat(8, 1fr);
     grid-template-areas: " header header" " main main" " main main" " main main" " main main" " main main" " main main" " main main" " main main";
@@ -470,6 +481,42 @@ ol {
   }
   .main > div:nth-child(2) {
     order: 1;
+  }
+  input#menu-toggle:checked ~ .sidebar {
+    top: 40%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .header .nav {
+    column-gap: 20px;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header .logo {
+    margin-right: auto;
+  }
+  .header .search-form {
+    margin-right: 0;
+  }
+  .header .search-form .search {
+    display: none;
+  }
+  .header .actions {
+    margin-left: 20px;
+    column-gap: 20px;
+  }
+  .header .nav .nav-link {
+    font-size: 1.5rem;
+  }
+  .header .btn-menu {
+    margin-left: 15px;
+  }
+  .sidebar {
+    padding: 0;
+  }
+  .sidebar .nav {
+    column-gap: 0;
   }
 }
 
