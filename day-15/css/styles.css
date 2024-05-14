@@ -203,35 +203,6 @@ ol {
   grid-template-areas: "sidebar header header header header" "sidebar main main main main" "sidebar main main main main" "sidebar main main main main" "sidebar main main main main";
 }
 
-.main {
-  grid-area: main;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-flow: dense;
-  grid-auto-rows: 188px;
-  grid-auto-columns: 271px;
-  gap: 22px;
-}
-.main > div {
-  border-radius: 16px;
-  overflow: hidden;
-}
-.main .wide {
-  grid-column: span 2;
-}
-.main .tall {
-  grid-row: span 2;
-}
-.main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left;
-}
-.main img.oj-center {
-  object-position: center;
-}
-
 .sidebar {
   grid-area: sidebar;
   padding: 54px 0 0 58px;
@@ -343,6 +314,35 @@ ol {
 }
 .header .btn-menu label {
   cursor: pointer;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+  grid-auto-rows: 188px;
+  grid-auto-columns: 271px;
+  gap: 22px;
+}
+.main > div {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.main .wide {
+  grid-column: span 2;
+}
+.main .tall {
+  grid-row: span 2;
+}
+.main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.main img.oj-center {
+  object-position: center;
 }
 
 .chat-btn {
@@ -514,9 +514,16 @@ ol {
   }
   .sidebar {
     padding: 0;
+    width: 80%;
   }
   .sidebar .nav {
     column-gap: 0;
+  }
+  .main {
+    grid-auto-rows: 130px;
+  }
+  .main img {
+    object-fit: cover;
   }
 }
 
