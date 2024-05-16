@@ -1,0 +1,91 @@
+.quantity-section {
+    $orange: #fff0e7;
+    $green: #f2ffec;
+    $greenCircle: #dcffca;
+    $orangeCircle: #ffd5bd;
+    margin: 100px 0;
+    .content {
+        @include dflex-center {
+            flex-direction: column;
+        }
+        text-align: center;
+        margin-bottom: 115px;
+        .title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            width: 50%;
+            margin-bottom: 24px;
+        }
+        .text {
+            width: 55%;
+        }
+    }
+    .quantity-list {
+        position: relative;
+        @include dflex-center {
+            justify-content: center;
+            column-gap: 21.67px;
+        }
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 235px;
+            height: 235px;
+            border-radius: 50%;
+            position: absolute;
+            z-index: -1;
+        }
+        &::before {
+            background: $greenCircle;
+            top: -100px;
+            left: 0;
+        }
+        &::after {
+            background: $orangeCircle;
+            bottom: -100px;
+            right: 0;
+        }
+        .quantity-item {
+            width: 294.167px;
+            height: 337.5px;
+            border-radius: 3.333px;
+            background: $white;
+            box-shadow: -5.833px 8.333px 72.5px 0px rgba(54, 54, 54, 0.12);
+            padding: 33.33px;
+
+            &.big {
+                width: 342.5px;
+                height: 392.5px;
+                padding: 60.83px 33.33px;
+            }
+            .image {
+                @include dflex-center {
+                    justify-content: center;
+                }
+                width: 83.333px;
+                height: 83.333px;
+                border-radius: 10px;
+                &.orange {
+                    background: $orange;
+                }
+                &.green {
+                    background: $green;
+                }
+                img {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            .number {
+                display: block;
+                font-size: 4.33rem;
+                font-weight: 800;
+                margin: 23.33px 0;
+            }
+            .desc {
+                font-size: 2rem;
+            }
+        }
+    }
+}

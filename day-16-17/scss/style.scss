@@ -1,0 +1,21 @@
+// Partials
+@import "partials/variables";
+@import "partials/reset";
+@import "partials/mixin";
+@import "partials/base";
+
+// Components
+@import "components/breadcrumbs";
+@import "components/card_item";
+
+// Layout
+@import "layouts/header";
+@import "layouts/footer";
+
+// Pages Home
+@import "pages/home/hero";
+@import "pages/home/quantity";
+@import "pages/home/product";
+
+@import "pages/about/about";
+@import "pages/products/products";

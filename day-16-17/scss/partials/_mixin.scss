@@ -1,0 +1,41 @@
+// Định nghĩa các mixin
+
+@mixin dflex-center {
+    display: flex;
+    align-items: center;
+    @content;
+}
+@mixin center($width, $spacer: 0) {
+    max-width: $width;
+    margin: $spacer auto;
+}
+@mixin media-small-mobile {
+    @media screen and (max-width: 450.98px) {
+        @content;
+    }
+}
+@mixin media-mobile {
+    @media screen and (max-width: 575.98px) {
+        @content;
+    }
+}
+@mixin media-small-tablet {
+    @media screen and (max-width: 767.98px) {
+        @content;
+    }
+}
+@mixin media-tablet {
+    @media screen and (max-width: 991.98px) {
+        @content;
+    }
+}
+@mixin media-desktop {
+    @media screen and (max-width: 1199.98px) {
+        @content;
+    }
+}
+@mixin media-extra-desktop {
+    @media screen and (max-width: 1399.98px) {
+        @content;
+    }
+}

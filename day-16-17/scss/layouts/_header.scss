@@ -1,0 +1,150 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $headerHeight;
+    padding: 15px 0;
+    background: $white;
+    box-shadow: 0px 1.667px 8.333px 0px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    .container {
+        @include dflex-center;
+    }
+
+    .logo {
+        width: 105px;
+        margin-right: auto;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .header-wrap {
+        @include dflex-center;
+        .nav {
+            ul {
+                @include dflex-center {
+                    column-gap: $headerColumnGap;
+                    margin-right: 50px;
+                }
+                a {
+                    font-size: $textSize;
+                    padding: 45px 0;
+                    position: relative;
+                    font-weight: 600;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0px;
+                        height: 2px;
+                        background: $primaryColor;
+                        transition: width 0.5s ease-in-out;
+                    }
+                    &:hover,
+                    &.active {
+                        color: $primaryColor;
+                    }
+                    &:hover::after,
+                    &.active::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .actions {
+            @include dflex-center {
+                column-gap: $headerColumnGap;
+            }
+            .action-item {
+                &.cart {
+                    position: relative;
+                    &::after {
+                        @include dflex-center {
+                            justify-content: center;
+                        }
+                        position: absolute;
+                        top: -30%;
+                        right: -30%;
+                        content: "3";
+                        width: 18px;
+                        height: 18px;
+                        background: $red;
+                        border-radius: 50%;
+                        color: $white;
+                        font-size: $f-10;
+                        font-weight: $fw-500;
+                    }
+                }
+            }
+        }
+        .btn-toggle {
+            margin-left: 50px;
+            label {
+                color: $textColor;
+                cursor: pointer;
+                font-size: 2.3rem;
+            }
+        }
+    }
+}
+@include media-tablet {
+    .header {
+        .header-wrap {
+            .nav {
+                position: fixed;
+                width: 280px;
+                background: $white;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                translate: -100% 0;
+                z-index: 9999;
+                transition: all 0.5s ease-in-out;
+                ul {
+                    display: block;
+                    margin: 40px 0 0 40px;
+                    a {
+                        display: inline-block;
+                        padding: 15px 0;
+                        margin-bottom: 20px;
+                    }
+                }
+                .close-menu {
+                    font-size: 3rem;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    input#open-menu:checked ~ .header {
+        .header-wrap {
+            .nav {
+                translate: 0;
+                box-shadow: 0px 1.667px 8.333px 0px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
+@include media-mobile {
+    .header {
+        height: fit-content;
+        padding: 10px 0;
+        .logo {
+            width: 80px;
+        }
+        .header-wrap {
+            .actions {
+                column-gap: 25px;
+            }
+            .btn-toggle {
+                margin-left: 25px;
+            }
+        }
+    }
+}

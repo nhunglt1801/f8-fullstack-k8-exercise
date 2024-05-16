@@ -1,0 +1,198 @@
+.hero-section {
+    margin-top: 108px;
+    height: 708px;
+    position: relative;
+    overflow: hidden;
+    .container {
+        height: 100%;
+        .row {
+            height: 100%;
+        }
+    }
+    .content {
+        .pretitle {
+            font-size: 3.6rem;
+            font-weight: 800;
+            line-height: 1.8;
+        }
+        .title {
+            font-size: 4.3rem;
+            width: 70%;
+            font-style: normal;
+            font-weight: 800;
+            margin-bottom: 27px;
+        }
+        .text {
+            width: 78%;
+        }
+    }
+    .images {
+        height: 100%;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -23% -50%;
+            height: 100%;
+            width: auto;
+        }
+        p {
+            position: absolute;
+            top: 50%;
+            left: 68%;
+            translate: 0 -50%;
+            rotate: 90deg;
+            font-size: 16.7rem;
+            font-weight: 800;
+            line-height: 100%;
+            color: #216000;
+            opacity: 0.15;
+        }
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        right: 0;
+        background: $backgroundColor;
+        z-index: -2;
+        border-radius: 16.667px 0px 0px 16.667px;
+    }
+}
+@include media-extra-desktop {
+    .hero-section {
+        .container {
+            max-width: 1140px;
+        }
+        .images {
+            img {
+                height: 90%;
+            }
+            p {
+                left: 70%;
+                font-size: 12.7rem;
+            }
+        }
+    }
+}
+@include media-desktop {
+    .hero-section {
+        .container {
+            max-width: 960px;
+        }
+        height: 500px;
+        .content {
+            .pretitle {
+                font-size: 2.8rem;
+            }
+            .title {
+                font-size: 3.5rem;
+            }
+            .text {
+                font-size: 1.5rem;
+            }
+        }
+        .images {
+            img {
+                height: 100%;
+            }
+            p {
+                font-size: 9.7rem;
+            }
+        }
+    }
+}
+@include media-tablet {
+    .hero-section {
+        .container {
+            max-width: 720px;
+        }
+        height: 400px;
+        .content {
+            .pretitle {
+                font-size: 2rem;
+            }
+            .title {
+                font-size: 2.8rem;
+                width: 100%;
+            }
+            .text {
+                font-size: 1.4rem;
+                width: 90%;
+            }
+        }
+        .images {
+            img {
+                height: 90%;
+            }
+            p {
+                font-size: 7.7rem;
+            }
+        }
+    }
+}
+@include media-small-tablet {
+    .hero-section {
+        .container {
+            max-width: 540px;
+        }
+        .images {
+            img {
+                top: 75%;
+                left: 70%;
+                height: 70%;
+            }
+            p {
+                top: 28%;
+                font-size: 5.7rem;
+            }
+        }
+        .overlay {
+            left: 0;
+            border-radius: 0;
+        }
+    }
+}
+@include media-mobile {
+    .hero-section {
+        margin-top: 80px;
+        .container {
+            max-width: 100%;
+        }
+        .content {
+            .pretitle {
+                font-size: 1.6rem;
+            }
+            .title {
+                font-size: 2.3rem;
+                width: 75%;
+            }
+            .text {
+                font-size: 1.3rem;
+                width: 65%;
+            }
+        }
+        .images {
+            img {
+                height: 60%;
+            }
+            p {
+                font-size: 4.7rem;
+            }
+        }
+    }
+}
+@include media-small-mobile {
+    .hero-section {
+        .images {
+            img {
+                height: 50%;
+            }
+            p {
+                left: 63%;
+                font-size: 4.5rem;
+            }
+        }
+    }
+}
