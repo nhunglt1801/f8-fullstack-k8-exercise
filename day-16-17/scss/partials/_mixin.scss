@@ -5,6 +5,9 @@
         margin: auto;
     }
 }
+@mixin section-base {
+    padding: 100px 0;
+}
 @mixin dflex-center {
     display: flex;
     align-items: center;

@@ -1,9 +1,5 @@
-$orange: #fff0e7;
-$green: #f2ffec;
-$greenCircle: #dcffca;
-$orangeCircle: #ffd5bd;
 .quantity-section {
-    margin: 100px 0;
+    @include section-base;
     .content {
         @include dflex-center {
             flex-direction: column;
@@ -37,14 +33,14 @@ $orangeCircle: #ffd5bd;
             z-index: -1;
         }
         &::before {
-            background: $greenCircle;
+            background: $green-200;
             top: -100px;
-            left: 0;
+            left: -25px;
         }
         &::after {
-            background: $orangeCircle;
+            background: $orange-200;
             bottom: -100px;
-            right: 0;
+            right: -25px;
         }
         .quantity-item {
             width: 294.167px;
@@ -67,10 +63,10 @@ $orangeCircle: #ffd5bd;
                 height: 83.333px;
                 border-radius: 10px;
                 &.orange {
-                    background: $orange;
+                    background: $orange-100;
                 }
                 &.green {
-                    background: $green;
+                    background: $green-100;
                 }
                 img {
                     width: 45px;
@@ -96,12 +92,13 @@ $orangeCircle: #ffd5bd;
 }
 @include media-desktop {
     .quantity-section {
+        padding: 50px 0;
         .container {
             max-width: 960px;
         }
         .content {
             .title {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             .text {
                 font-size: 1.5rem;
@@ -152,13 +149,11 @@ $orangeCircle: #ffd5bd;
         .content {
             margin-bottom: 100px;
             .title {
-                width: 50%;
+                width: 60%;
+                font-size: 2.5rem;
             }
             .text {
                 width: 70%;
-            }
-            .title {
-                font-size: 2rem;
             }
         }
         .quantity-list {
@@ -204,7 +199,7 @@ $orangeCircle: #ffd5bd;
         .content {
             margin-bottom: 60px;
             .title {
-                width: 60%;
+                width: 80%;
             }
             .text {
                 font-size: 1.4rem;
@@ -256,7 +251,6 @@ $orangeCircle: #ffd5bd;
 }
 @include media-small-mobile {
     .quantity-section {
-        margin: 50px 0;
         @include containerWidth(100%);
         .content {
             .title,
@@ -264,7 +258,7 @@ $orangeCircle: #ffd5bd;
                 width: 100%;
             }
             .title {
-                font-size: 1.6rem;
+                font-size: 2.3rem;
             }
             .text {
                 font-size: 1.3rem;
