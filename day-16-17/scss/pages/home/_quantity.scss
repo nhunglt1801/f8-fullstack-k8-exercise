@@ -7,7 +7,7 @@
         text-align: center;
         margin-bottom: 115px;
         .title {
-            font-size: 3.2rem;
+            font-size: $headingSize;
             font-weight: 800;
             width: 50%;
             margin-bottom: 24px;
@@ -92,13 +92,12 @@
 }
 @include media-desktop {
     .quantity-section {
-        padding: 50px 0;
         .container {
             max-width: 960px;
         }
         .content {
             .title {
-                font-size: 3rem;
+                font-size: $headingSize-desk;
             }
             .text {
                 font-size: 1.5rem;
@@ -150,7 +149,7 @@
             margin-bottom: 100px;
             .title {
                 width: 60%;
-                font-size: 2.5rem;
+                font-size: $headingSize-tablet;
             }
             .text {
                 width: 70%;
@@ -253,15 +252,13 @@
     .quantity-section {
         @include containerWidth(100%);
         .content {
-            .title,
-            .text {
-                width: 100%;
-            }
             .title {
-                font-size: 2.3rem;
+                font-size: $headingSize-small;
+                width: 90%;
             }
             .text {
                 font-size: 1.3rem;
+                width: 100%;
             }
         }
         .quantity-list {

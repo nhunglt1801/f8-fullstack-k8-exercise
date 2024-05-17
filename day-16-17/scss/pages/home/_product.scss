@@ -1,7 +1,7 @@
 .product-section {
     @include section-base;
     .title {
-        font-size: 3.2rem;
+        font-size: $headingSize;
         font-weight: 800;
         text-align: center;
         margin-bottom: 50px;
@@ -74,9 +74,8 @@
 }
 @include media-desktop {
     .product-section {
-        padding: 50px 0;
         .title {
-            font-size: 3rem;
+            font-size: $headingSize-desk;
         }
         .product-list {
             width: 80%;
@@ -108,7 +107,7 @@
 @include media-tablet {
     .product-section {
         .title {
-            font-size: 2.5rem;
+            font-size: $headingSize-tablet;
         }
     }
 }
@@ -147,7 +146,7 @@
 @include media-small-mobile {
     .product-section {
         .title {
-            font-size: 2.3rem;
+            font-size: $headingSize-small;
             margin-bottom: 40px;
         }
     }
