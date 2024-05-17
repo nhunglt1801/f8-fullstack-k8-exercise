@@ -497,4 +497,194 @@ body {
   font-size: 2rem;
 }
 
+@media screen and (max-width: 1399.98px) {
+  .quantity-section .container {
+    max-width: 1140px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  .quantity-section .container {
+    max-width: 960px;
+  }
+  .quantity-section .content .title {
+    font-size: 2.8rem;
+  }
+  .quantity-section .content .text {
+    font-size: 1.5rem;
+  }
+  .quantity-section .quantity-list::before, .quantity-section .quantity-list::after {
+    width: 180px;
+    height: 180px;
+  }
+  .quantity-section .quantity-list::before {
+    top: -50px;
+    left: -20px;
+  }
+  .quantity-section .quantity-list::after {
+    bottom: -50px;
+    right: -20px;
+  }
+  .quantity-section .quantity-list .quantity-item {
+    width: 250px;
+    height: 300px;
+  }
+  .quantity-section .quantity-list .quantity-item.big {
+    width: 300px;
+    height: 350px;
+  }
+  .quantity-section .quantity-list .quantity-item .image {
+    width: 65px;
+    height: 65px;
+  }
+  .quantity-section .quantity-list .quantity-item .image img {
+    width: 35px;
+    height: 35px;
+  }
+  .quantity-section .quantity-list .quantity-item .number {
+    font-size: 4rem;
+  }
+  .quantity-section .quantity-list .quantity-item .desc {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .quantity-section .container {
+    max-width: 720px;
+    margin: auto;
+  }
+  .quantity-section .content {
+    margin-bottom: 100px;
+  }
+  .quantity-section .content .title {
+    width: 50%;
+  }
+  .quantity-section .content .text {
+    width: 70%;
+  }
+  .quantity-section .content .title {
+    font-size: 2rem;
+  }
+  .quantity-section .quantity-list::before, .quantity-section .quantity-list::after {
+    width: 150px;
+    height: 150px;
+  }
+  .quantity-section .quantity-list::before {
+    left: -50px;
+  }
+  .quantity-section .quantity-list::after {
+    right: -50px;
+  }
+  .quantity-section .quantity-list .quantity-item {
+    padding: 25px;
+  }
+  .quantity-section .quantity-list .quantity-item.big {
+    padding: 50px 25px;
+    width: 300px;
+    height: 350px;
+  }
+  .quantity-section .quantity-list .quantity-item .image {
+    width: 50px;
+    height: 50px;
+  }
+  .quantity-section .quantity-list .quantity-item .image img {
+    width: 30px;
+    height: 30px;
+  }
+  .quantity-section .quantity-list .quantity-item .number {
+    font-size: 3.5rem;
+  }
+  .quantity-section .quantity-list .quantity-item .desc {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .quantity-section .container {
+    max-width: 540px;
+    margin: auto;
+  }
+  .quantity-section .content {
+    margin-bottom: 60px;
+  }
+  .quantity-section .content .title {
+    width: 60%;
+  }
+  .quantity-section .content .text {
+    font-size: 1.4rem;
+    width: 80%;
+  }
+  .quantity-section .quantity-list {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+  .quantity-section .quantity-list::before, .quantity-section .quantity-list::after {
+    width: 120px;
+    height: 120px;
+  }
+  .quantity-section .quantity-list::before {
+    left: 50px;
+  }
+  .quantity-section .quantity-list::after {
+    right: 50px;
+  }
+  .quantity-section .quantity-list .quantity-item {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+  }
+  .quantity-section .quantity-list .quantity-item.big {
+    padding: 20px 46px;
+    width: 350px;
+    height: 220px;
+  }
+  .quantity-section .quantity-list .quantity-item .image {
+    width: 50px;
+    height: 50px;
+  }
+  .quantity-section .quantity-list .quantity-item .image img {
+    width: 30px;
+    height: 30px;
+  }
+  .quantity-section .quantity-list .quantity-item .number {
+    margin: 15px 0;
+    font-size: 2.8rem;
+  }
+  .quantity-section .quantity-list .quantity-item .desc {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 450.98px) {
+  .quantity-section {
+    margin: 50px 0;
+  }
+  .quantity-section .container {
+    max-width: 100%;
+    margin: auto;
+  }
+  .quantity-section .content .title,
+  .quantity-section .content .text {
+    width: 100%;
+  }
+  .quantity-section .content .title {
+    font-size: 1.6rem;
+  }
+  .quantity-section .content .text {
+    font-size: 1.3rem;
+  }
+  .quantity-section .quantity-list::before {
+    left: 0;
+  }
+  .quantity-section .quantity-list::after {
+    right: 0;
+  }
+  .quantity-section .quantity-list .quantity-item {
+    width: 90%;
+  }
+  .quantity-section .quantity-list .quantity-item.big {
+    padding: 20px 40px;
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

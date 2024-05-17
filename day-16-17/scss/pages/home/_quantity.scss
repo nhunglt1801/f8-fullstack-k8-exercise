@@ -1,8 +1,8 @@
+$orange: #fff0e7;
+$green: #f2ffec;
+$greenCircle: #dcffca;
+$orangeCircle: #ffd5bd;
 .quantity-section {
-    $orange: #fff0e7;
-    $green: #f2ffec;
-    $greenCircle: #dcffca;
-    $orangeCircle: #ffd5bd;
     margin: 100px 0;
     .content {
         @include dflex-center {
@@ -85,6 +85,204 @@
             }
             .desc {
                 font-size: 2rem;
+            }
+        }
+    }
+}
+@include media-extra-desktop {
+    .quantity-section {
+        @include containerWidth(1140px);
+    }
+}
+@include media-desktop {
+    .quantity-section {
+        .container {
+            max-width: 960px;
+        }
+        .content {
+            .title {
+                font-size: 2.8rem;
+            }
+            .text {
+                font-size: 1.5rem;
+            }
+        }
+        .quantity-list {
+            &::before,
+            &::after {
+                width: 180px;
+                height: 180px;
+            }
+            &::before {
+                top: -50px;
+                left: -20px;
+            }
+            &::after {
+                bottom: -50px;
+                right: -20px;
+            }
+            .quantity-item {
+                width: 250px;
+                height: 300px;
+                &.big {
+                    width: 300px;
+                    height: 350px;
+                }
+                .image {
+                    width: 65px;
+                    height: 65px;
+                    img {
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
+                .number {
+                    font-size: 4rem;
+                }
+                .desc {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+@include media-tablet {
+    .quantity-section {
+        @include containerWidth(720px);
+        .content {
+            margin-bottom: 100px;
+            .title {
+                width: 50%;
+            }
+            .text {
+                width: 70%;
+            }
+            .title {
+                font-size: 2rem;
+            }
+        }
+        .quantity-list {
+            &::before,
+            &::after {
+                width: 150px;
+                height: 150px;
+            }
+            &::before {
+                left: -50px;
+            }
+            &::after {
+                right: -50px;
+            }
+            .quantity-item {
+                padding: 25px;
+                &.big {
+                    padding: 50px 25px;
+                    width: 300px;
+                    height: 350px;
+                }
+                .image {
+                    width: 50px;
+                    height: 50px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .number {
+                    font-size: 3.5rem;
+                }
+                .desc {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+@include media-small-tablet {
+    .quantity-section {
+        @include containerWidth(540px);
+        .content {
+            margin-bottom: 60px;
+            .title {
+                width: 60%;
+            }
+            .text {
+                font-size: 1.4rem;
+                width: 80%;
+            }
+        }
+        .quantity-list {
+            flex-direction: column;
+            column-gap: 0;
+            row-gap: 20px;
+            &::before,
+            &::after {
+                width: 120px;
+                height: 120px;
+            }
+            &::before {
+                left: 50px;
+            }
+            &::after {
+                right: 50px;
+            }
+            .quantity-item {
+                width: 300px;
+                height: 200px;
+                padding: 20px;
+                &.big {
+                    padding: 20px 46px;
+                    width: 350px;
+                    height: 220px;
+                }
+                .image {
+                    width: 50px;
+                    height: 50px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .number {
+                    margin: 15px 0;
+                    font-size: 2.8rem;
+                }
+                .desc {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+@include media-small-mobile {
+    .quantity-section {
+        margin: 50px 0;
+        @include containerWidth(100%);
+        .content {
+            .title,
+            .text {
+                width: 100%;
+            }
+            .title {
+                font-size: 1.6rem;
+            }
+            .text {
+                font-size: 1.3rem;
+            }
+        }
+        .quantity-list {
+            &::before {
+                left: 0;
+            }
+            &::after {
+                right: 0;
+            }
+            .quantity-item {
+                width: 90%;
+                &.big {
+                    padding: 20px 40px;
+                    width: 100%;
+                }
             }
         }
     }

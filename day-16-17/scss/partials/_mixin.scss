@@ -1,5 +1,10 @@
 // Định nghĩa các mixin
-
+@mixin containerWidth($width) {
+    .container {
+        max-width: $width;
+        margin: auto;
+    }
+}
 @mixin dflex-center {
     display: flex;
     align-items: center;
