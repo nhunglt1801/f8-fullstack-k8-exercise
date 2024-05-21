@@ -295,6 +295,7 @@ textarea {
   font-size: 1.7rem;
   color: #46b20f;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 .footer .footer-top ul li a,
 .footer .footer-top ul li span {
@@ -333,6 +334,31 @@ textarea {
   justify-content: center;
 }
 
+@media screen and (max-width: 991.98px) {
+  .footer .container {
+    max-width: 720px;
+    margin: auto;
+  }
+  .footer .footer-top .row {
+    row-gap: 20px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .footer .container {
+    max-width: 540px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .footer .container {
+    max-width: 100%;
+    margin: auto;
+  }
+  .footer .footer-bottom {
+    padding-top: 15px;
+    flex-direction: column;
+  }
+}
 .hero-section {
   margin-top: 108px;
   padding-top: 0;
@@ -751,6 +777,19 @@ textarea {
   .quantity-section {
     padding-top: 70px;
   }
+  .quantity-section .quantity-list .quantity-item {
+    text-align: center;
+    width: 90% !important;
+    height: fit-content !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .quantity-section .quantity-list .quantity-item .image {
+    margin-inline: auto;
+  }
+  .quantity-section .quantity-list .quantity-item .desc {
+    font-size: 1.3rem;
+  }
 }
 @media screen and (max-width: 450.98px) {
   .quantity-section {
@@ -774,17 +813,7 @@ textarea {
     right: 0;
   }
   .quantity-section .quantity-list .quantity-item {
-    text-align: center;
     width: 100% !important;
-    height: fit-content !important;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  .quantity-section .quantity-list .quantity-item .image {
-    margin-inline: auto;
-  }
-  .quantity-section .quantity-list .quantity-item .desc {
-    font-size: 1.3rem;
   }
 }
 .product-section .title {

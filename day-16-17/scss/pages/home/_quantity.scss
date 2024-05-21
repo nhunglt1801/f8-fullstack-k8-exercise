@@ -248,6 +248,21 @@
 @include media-mobile {
     .quantity-section {
         @include paddingTop(70px);
+        .quantity-list {
+            .quantity-item {
+                text-align: center;
+                width: 90% !important;
+                height: fit-content !important;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                .image {
+                    margin-inline: auto;
+                }
+                .desc {
+                    font-size: $textSize-small;
+                }
+            }
+        }
     }
 }
 
@@ -272,17 +287,7 @@
                 right: 0;
             }
             .quantity-item {
-                text-align: center;
                 width: 100% !important;
-                height: fit-content !important;
-                padding-top: 30px;
-                padding-bottom: 30px;
-                .image {
-                    margin-inline: auto;
-                }
-                .desc {
-                    font-size: $textSize-small;
-                }
             }
         }
     }

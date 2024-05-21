@@ -21,6 +21,7 @@
             font-size: 1.7rem;
             color: $primaryColor;
             font-weight: 600;
+            margin-bottom: 10px;
         }
         ul {
             li {
@@ -61,6 +62,30 @@
                 align-items: center;
                 justify-content: center;
             }
+        }
+    }
+}
+@include media-tablet {
+    .footer {
+        @include containerWidth(720px);
+        .footer-top {
+            .row {
+                row-gap: 20px;
+            }
+        }
+    }
+}
+@include media-small-tablet {
+    .footer {
+        @include containerWidth(540px);
+    }
+}
+@include media-mobile {
+    .footer {
+        @include containerWidth(100%);
+        .footer-bottom {
+            padding-top: 15px;
+            flex-direction: column;
         }
     }
 }
