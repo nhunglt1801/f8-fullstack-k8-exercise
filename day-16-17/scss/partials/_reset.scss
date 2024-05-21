@@ -54,6 +54,9 @@ option {
     font-size: $textSize;
     color: $textColor;
 }
+textarea {
+    resize: none;
+}
 ::-webkit-scrollbar {
     width: 5px;
 }

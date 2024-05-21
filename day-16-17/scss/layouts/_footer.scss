@@ -1,4 +1,66 @@
 .footer {
     padding: 66.67px 0 26.67px;
     background: $green-100;
+    .footer-top {
+        padding-bottom: 72.5px;
+        border-bottom: 1px solid $grey-500;
+        .logo-wrap {
+            .logo {
+                width: 132px;
+                height: 89px;
+            }
+            .text {
+                font-size: 13px;
+                span {
+                    font-size: $textSize;
+                }
+            }
+        }
+
+        .title {
+            font-size: 1.7rem;
+            color: $primaryColor;
+            font-weight: 600;
+        }
+        ul {
+            li {
+                a,
+                span {
+                    display: block;
+                    padding: 5px 0;
+                }
+                span {
+                    display: flex;
+                    align-items: center;
+                    &.text-bold {
+                        font-weight: 600;
+                    }
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        padding-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .social ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a {
+                margin: 5px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: $green-200;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
 }

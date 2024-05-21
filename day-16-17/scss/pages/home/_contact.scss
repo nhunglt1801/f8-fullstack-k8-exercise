@@ -1,4 +1,5 @@
 .form-section {
+    padding-top: 133px;
     padding-bottom: 100px;
     .image {
         width: 100%;
@@ -17,7 +18,12 @@
             .form-field {
                 border-radius: 6.667px;
                 border: 0.833px solid $grey-500;
-                padding: 13.333px;
+                overflow: hidden;
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 13px;
+                }
                 input::placeholder,
                 textarea::placeholder {
                     color: $grey-500;
@@ -49,9 +55,6 @@
             .form {
                 .row {
                     row-gap: 15px;
-                }
-                .form-field {
-                    padding: 10px;
                 }
             }
         }

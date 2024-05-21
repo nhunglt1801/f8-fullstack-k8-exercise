@@ -63,6 +63,10 @@ option {
   color: #2c2c2c;
 }
 
+textarea {
+  resize: none;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -272,6 +276,61 @@ option {
 .footer {
   padding: 66.67px 0 26.67px;
   background: #f2ffec;
+}
+.footer .footer-top {
+  padding-bottom: 72.5px;
+  border-bottom: 1px solid #a3a3a3;
+}
+.footer .footer-top .logo-wrap .logo {
+  width: 132px;
+  height: 89px;
+}
+.footer .footer-top .logo-wrap .text {
+  font-size: 13px;
+}
+.footer .footer-top .logo-wrap .text span {
+  font-size: 1.6rem;
+}
+.footer .footer-top .title {
+  font-size: 1.7rem;
+  color: #46b20f;
+  font-weight: 600;
+}
+.footer .footer-top ul li a,
+.footer .footer-top ul li span {
+  display: block;
+  padding: 5px 0;
+}
+.footer .footer-top ul li span {
+  display: flex;
+  align-items: center;
+}
+.footer .footer-top ul li span.text-bold {
+  font-weight: 600;
+}
+.footer .footer-top ul li span img {
+  margin-right: 10px;
+}
+.footer .footer-bottom {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer-bottom .social ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer-bottom .social ul a {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #dcffca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-section {
@@ -1209,6 +1268,9 @@ option {
     margin: auto;
   }
 }
+.service-section {
+  padding-top: 133px;
+}
 .service-section .service-list {
   max-width: 90%;
   margin: 0 auto;
@@ -1322,6 +1384,7 @@ option {
   }
 }
 .form-section {
+  padding-top: 133px;
   padding-bottom: 100px;
 }
 .form-section .image {
@@ -1341,7 +1404,12 @@ option {
 .form-section .content .form .form-field {
   border-radius: 6.667px;
   border: 0.833px solid #a3a3a3;
-  padding: 13.333px;
+  overflow: hidden;
+}
+.form-section .content .form .form-field input,
+.form-section .content .form .form-field textarea {
+  width: 100%;
+  padding: 13px;
 }
 .form-section .content .form .form-field input::placeholder,
 .form-section .content .form .form-field textarea::placeholder {
@@ -1372,9 +1440,6 @@ option {
   }
   .form-section .content .form .row {
     row-gap: 15px;
-  }
-  .form-section .content .form .form-field {
-    padding: 10px;
   }
 }
 @media screen and (max-width: 991.98px) {
