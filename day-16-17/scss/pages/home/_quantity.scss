@@ -1,5 +1,4 @@
 .quantity-section {
-    @include section-base;
     .content {
         @include dflex-center {
             flex-direction: column;
@@ -171,8 +170,6 @@
                 padding: 25px;
                 &.big {
                     padding: 50px 25px;
-                    width: 300px;
-                    height: 350px;
                 }
                 .image {
                     width: 50px;
@@ -248,17 +245,23 @@
         }
     }
 }
+@include media-mobile {
+    .quantity-section {
+        @include paddingTop(70px);
+    }
+}
+
 @include media-small-mobile {
     .quantity-section {
+        @include paddingTop(50px);
         @include containerWidth(100%);
         .content {
-            .title {
-                font-size: $headingSize-small;
-                width: 90%;
+            .title,
+            .text {
+                width: 100%;
             }
             .text {
-                font-size: 1.3rem;
-                width: 100%;
+                font-size: $textSize-small;
             }
         }
         .quantity-list {
@@ -269,10 +272,16 @@
                 right: 0;
             }
             .quantity-item {
-                width: 90%;
-                &.big {
-                    padding: 20px 40px;
-                    width: 100%;
+                text-align: center;
+                width: 100% !important;
+                height: fit-content !important;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                .image {
+                    margin-inline: auto;
+                }
+                .desc {
+                    font-size: $textSize-small;
                 }
             }
         }

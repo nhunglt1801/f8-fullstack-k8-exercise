@@ -8,6 +8,9 @@
 @mixin section-base {
     padding-top: 100px;
 }
+@mixin paddingTop($height) {
+    padding-top: $height;
+}
 @mixin dflex-center {
     display: flex;
     align-items: center;

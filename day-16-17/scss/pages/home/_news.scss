@@ -1,23 +1,30 @@
 .news-section {
-    @include section-base;
     .content {
-        .title {
+        &-title {
             font-size: $headingSize;
             font-weight: 800;
             margin-bottom: 23px;
         }
-        .text {
+        &-text {
             @include center(55%, 0);
         }
     }
     .news-list {
         margin: 29px 0 79px;
         .news-item {
+            display: block;
+            &:hover {
+                color: $textColor;
+            }
             .image {
                 width: 100%;
                 border-radius: 6.667px;
                 overflow: hidden;
                 margin-bottom: 16.27px;
+                img {
+                    border-radius: 6.667px;
+                    width: 100%;
+                }
             }
             .time-box {
                 @include dflex-center {
@@ -42,12 +49,22 @@
                 font-size: 2rem;
                 font-weight: 600;
             }
-            .text {
+            &:hover {
+                .image {
+                    img {
+                        box-shadow: 0px 3.333px 3.333px 0px rgba(0, 0, 0, 0.25);
+                    }
+                }
+                .time-box {
+                    span.time {
+                        text-shadow: 0px 3.333px 3.333px rgba(0, 0, 0, 0.25);
+                    }
+                }
             }
         }
     }
 }
-@include media-desktop {
+@include media-extra-desktop {
     .news-section {
         @include containerWidth(1140px);
     }
@@ -55,11 +72,60 @@
 @include media-desktop {
     .news-section {
         @include containerWidth(960px);
+        .content {
+            &-title {
+                font-size: $headingSize-desk;
+            }
+            &-text {
+                @include center(70%, 0);
+            }
+        }
+        .news-list {
+            .row {
+                row-gap: 20px;
+            }
+            .news-item {
+                .image {
+                    margin-bottom: 10px;
+                }
+                .time-box {
+                    span {
+                        font-size: $textSize-small;
+                    }
+                }
+                .title {
+                    margin: 10px 0;
+                    font-size: 1.8rem;
+                }
+                .text {
+                    font-size: 1.5rem;
+                }
+            }
+        }
     }
 }
 @include media-tablet {
     .news-section {
         @include containerWidth(720px);
+        .content {
+            &-title {
+                font-size: $headingSize-tablet;
+            }
+            &-text {
+                @include center(100%, 0);
+                font-size: $textSize-tablet;
+            }
+        }
+        .news-list {
+            .news-item {
+                .title {
+                    font-size: 1.7rem;
+                }
+                .text {
+                    font-size: $textSize-tablet;
+                }
+            }
+        }
     }
 }
 @include media-small-tablet {
@@ -69,6 +135,53 @@
 }
 @include media-mobile {
     .news-section {
+        @include containerWidth(90%);
+        @include paddingTop(70px);
+        .news-list {
+            margin-bottom: 39px;
+            .news-item {
+                .image {
+                    width: 100%;
+                    text-align: center;
+                }
+                .title {
+                    font-size: 1.6rem;
+                }
+                .text {
+                    font-size: $textSize-small;
+                }
+            }
+        }
+        .text-center {
+            .btn {
+                font-size: $textSize-small;
+            }
+        }
+    }
+}
+@include media-small-mobile {
+    .news-section {
         @include containerWidth(100%);
+        @include paddingTop(50px);
+        .content {
+            &-title {
+                font-size: $headingSize-small;
+                margin-bottom: 15px;
+            }
+            &-text {
+                font-size: $textSize-small;
+            }
+        }
+        .news-list {
+            .news-item {
+                .time-box {
+                    span.time {
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

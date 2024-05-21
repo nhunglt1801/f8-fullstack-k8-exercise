@@ -54,6 +54,7 @@
                 }
             }
         }
+
         .actions {
             @include dflex-center {
                 column-gap: $headerColumnGap;
@@ -120,6 +121,15 @@
                     cursor: pointer;
                 }
             }
+            .overlay {
+                position: fixed;
+                inset: 0;
+                background: #00000085;
+                z-index: 9998;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.5s ease-in-out;
+            }
         }
     }
     input#open-menu:checked ~ .header {
@@ -127,6 +137,10 @@
             .nav {
                 translate: 0;
                 box-shadow: 0px 1.667px 8.333px 0px rgba(0, 0, 0, 0.15);
+            }
+            .overlay {
+                opacity: 1;
+                visibility: visible;
             }
         }
     }

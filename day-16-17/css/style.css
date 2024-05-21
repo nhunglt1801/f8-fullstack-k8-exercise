@@ -50,6 +50,10 @@ body {
   transition: all 0.3s;
 }
 
+section {
+  padding-top: 100px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -222,9 +226,22 @@ body {
     right: 20px;
     cursor: pointer;
   }
+  .header .header-wrap .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5215686275);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
   input#open-menu:checked ~ .header .header-wrap .nav {
     translate: 0;
     box-shadow: 0px 1.667px 8.333px 0px rgba(0, 0, 0, 0.15);
+  }
+  input#open-menu:checked ~ .header .header-wrap .overlay {
+    opacity: 1;
+    visibility: visible;
   }
 }
 @media screen and (max-width: 575.98px) {
@@ -244,6 +261,7 @@ body {
 }
 .hero-section {
   margin-top: 108px;
+  padding-top: 0;
   height: 708px;
   position: relative;
   overflow: hidden;
@@ -306,6 +324,7 @@ body {
 @media screen and (max-width: 1399.98px) {
   .hero-section .container {
     max-width: 1140px;
+    margin: auto;
   }
   .hero-section .images img {
     height: 90%;
@@ -321,6 +340,7 @@ body {
   }
   .hero-section .container {
     max-width: 960px;
+    margin: auto;
   }
   .hero-section .content .pretitle {
     font-size: 2.8rem;
@@ -344,12 +364,13 @@ body {
   }
   .hero-section .container {
     max-width: 720px;
+    margin: auto;
   }
   .hero-section .content .pretitle {
     font-size: 2rem;
   }
   .hero-section .content .title {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     width: 100%;
   }
   .hero-section .content .text {
@@ -366,6 +387,7 @@ body {
 @media screen and (max-width: 767.98px) {
   .hero-section .container {
     max-width: 540px;
+    margin: auto;
   }
   .hero-section .images img {
     top: 75%;
@@ -383,21 +405,21 @@ body {
 }
 @media screen and (max-width: 575.98px) {
   .hero-section {
+    height: fit-content;
     margin-top: 80px;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .hero-section .container {
+    max-width: 100%;
+    margin: auto;
   }
   .hero-section .container {
     max-width: 100%;
   }
-  .hero-section .content .pretitle {
-    font-size: 1.6rem;
-  }
-  .hero-section .content .title {
-    font-size: 2.3rem;
-    width: 75%;
-  }
+  .hero-section .content .title,
   .hero-section .content .text {
-    font-size: 1.3rem;
-    width: 65%;
+    width: 100%;
   }
   .hero-section .images img {
     height: 60%;
@@ -407,16 +429,13 @@ body {
   }
 }
 @media screen and (max-width: 450.98px) {
-  .hero-section .images img {
-    height: 50%;
+  .hero-section .container {
+    max-width: 100%;
+    margin: auto;
   }
-  .hero-section .images p {
-    left: 63%;
-    font-size: 4.5rem;
+  .hero-section .content .text {
+    font-size: 1.3rem;
   }
-}
-.quantity-section {
-  padding-top: 100px;
 }
 .quantity-section .content {
   display: flex;
@@ -582,8 +601,6 @@ body {
   }
   .quantity-section .quantity-list .quantity-item.big {
     padding: 50px 25px;
-    width: 300px;
-    height: 350px;
   }
   .quantity-section .quantity-list .quantity-item .image {
     width: 50px;
@@ -656,18 +673,25 @@ body {
     font-size: 1.5rem;
   }
 }
+@media screen and (max-width: 575.98px) {
+  .quantity-section {
+    padding-top: 70px;
+  }
+}
 @media screen and (max-width: 450.98px) {
+  .quantity-section {
+    padding-top: 50px;
+  }
   .quantity-section .container {
     max-width: 100%;
     margin: auto;
   }
-  .quantity-section .content .title {
-    font-size: 2.3rem;
-    width: 90%;
+  .quantity-section .content .title,
+  .quantity-section .content .text {
+    width: 100%;
   }
   .quantity-section .content .text {
     font-size: 1.3rem;
-    width: 100%;
   }
   .quantity-section .quantity-list::before {
     left: 0;
@@ -676,15 +700,18 @@ body {
     right: 0;
   }
   .quantity-section .quantity-list .quantity-item {
-    width: 90%;
+    text-align: center;
+    width: 100% !important;
+    height: fit-content !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
-  .quantity-section .quantity-list .quantity-item.big {
-    padding: 20px 40px;
-    width: 100%;
+  .quantity-section .quantity-list .quantity-item .image {
+    margin-inline: auto;
   }
-}
-.product-section {
-  padding-top: 100px;
+  .quantity-section .quantity-list .quantity-item .desc {
+    font-size: 1.3rem;
+  }
 }
 .product-section .title {
   font-size: 3.2rem;
@@ -731,7 +758,6 @@ body {
   position: relative;
 }
 .product-section .product-list .product-item .name.text-shadow {
-  padding: 0px 44.333px 0.667px 44px;
   text-shadow: 0px 3.333px 3.333px rgba(0, 0, 0, 0.25);
 }
 .product-section .product-list .product-item .name::after {
@@ -815,32 +841,103 @@ body {
     font-size: 1.8rem;
   }
 }
-@media screen and (max-width: 450.98px) {
-  .product-section .title {
-    font-size: 2.3rem;
-    margin-bottom: 40px;
+@media screen and (max-width: 575.98px) {
+  .product-section {
+    padding-top: 70px;
+  }
+  .product-section .product-list {
+    width: 100%;
+  }
+  .product-section .product-list .row {
+    row-gap: 40px;
+  }
+  .product-section .product-list .product-item .image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 60px;
+  }
+  .product-section .product-list .product-item .image img {
+    max-width: 90%;
+  }
+  .product-section .product-list .product-item .name,
+  .product-section .product-list .product-item .price {
+    margin-bottom: 15px;
+  }
+  .product-section .product-list .product-item .desc,
+  .product-section .product-list .product-item .price,
+  .product-section .product-list .product-item .btn {
+    font-size: 1.3rem;
+  }
+  .product-section .product-list .product-item .name,
+  .product-section .product-list .product-item .price span {
+    font-size: 1.5rem;
   }
 }
-.news-section {
-  padding-top: 100px;
+@media screen and (max-width: 450.98px) {
+  .product-section {
+    padding-top: 50px;
+  }
+  .product-section .title {
+    margin-bottom: 40px;
+  }
+  .product-section .product-list .row {
+    row-gap: 20px;
+  }
+  .product-section .product-list .product-item .image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  .product-section .product-list .product-item .image img {
+    max-width: 100%;
+    bottom: 0%;
+  }
+  .product-section .product-list .product-item .image.bg-orange, .product-section .product-list .product-item .image.bg-green {
+    background: none;
+  }
+  .product-section .product-list .product-item .name,
+  .product-section .product-list .product-item .price {
+    margin-bottom: 10px;
+  }
+  .product-section .product-list .product-item .btn {
+    font-size: 1rem;
+  }
+  .product-section .product-list .product-item .desc,
+  .product-section .product-list .product-item .price {
+    font-size: 1.1rem;
+  }
+  .product-section .product-list .product-item .name,
+  .product-section .product-list .product-item .price span {
+    font-size: 1.2rem;
+  }
 }
-.news-section .content .title {
+.news-section .content-title {
   font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 23px;
 }
-.news-section .content .text {
+.news-section .content-text {
   max-width: 55%;
   margin: 0 auto;
 }
 .news-section .news-list {
   margin: 29px 0 79px;
 }
+.news-section .news-list .news-item {
+  display: block;
+}
+.news-section .news-list .news-item:hover {
+  color: #2c2c2c;
+}
 .news-section .news-list .news-item .image {
   width: 100%;
   border-radius: 6.667px;
   overflow: hidden;
   margin-bottom: 16.27px;
+}
+.news-section .news-list .news-item .image img {
+  border-radius: 6.667px;
+  width: 100%;
 }
 .news-section .news-list .news-item .time-box {
   display: flex;
@@ -863,7 +960,14 @@ body {
   font-size: 2rem;
   font-weight: 600;
 }
-@media screen and (max-width: 1199.98px) {
+.news-section .news-list .news-item:hover .image img {
+  box-shadow: 0px 3.333px 3.333px 0px rgba(0, 0, 0, 0.25);
+}
+.news-section .news-list .news-item:hover .time-box span.time {
+  text-shadow: 0px 3.333px 3.333px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1399.98px) {
   .news-section .container {
     max-width: 1140px;
     margin: auto;
@@ -874,11 +978,48 @@ body {
     max-width: 960px;
     margin: auto;
   }
+  .news-section .content-title {
+    font-size: 3rem;
+  }
+  .news-section .content-text {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .news-section .news-list .row {
+    row-gap: 20px;
+  }
+  .news-section .news-list .news-item .image {
+    margin-bottom: 10px;
+  }
+  .news-section .news-list .news-item .time-box span {
+    font-size: 1.3rem;
+  }
+  .news-section .news-list .news-item .title {
+    margin: 10px 0;
+    font-size: 1.8rem;
+  }
+  .news-section .news-list .news-item .text {
+    font-size: 1.5rem;
+  }
 }
 @media screen and (max-width: 991.98px) {
   .news-section .container {
     max-width: 720px;
     margin: auto;
+  }
+  .news-section .content-title {
+    font-size: 2.5rem;
+  }
+  .news-section .content-text {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+  }
+  .news-section .news-list .news-item .title {
+    font-size: 1.7rem;
+  }
+  .news-section .news-list .news-item .text {
+    font-size: 1.4rem;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -888,7 +1029,167 @@ body {
   }
 }
 @media screen and (max-width: 575.98px) {
+  .news-section {
+    padding-top: 70px;
+  }
   .news-section .container {
+    max-width: 90%;
+    margin: auto;
+  }
+  .news-section .news-list {
+    margin-bottom: 39px;
+  }
+  .news-section .news-list .news-item .image {
+    width: 100%;
+    text-align: center;
+  }
+  .news-section .news-list .news-item .title {
+    font-size: 1.6rem;
+  }
+  .news-section .news-list .news-item .text {
+    font-size: 1.3rem;
+  }
+  .news-section .text-center .btn {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 450.98px) {
+  .news-section {
+    padding-top: 50px;
+  }
+  .news-section .container {
+    max-width: 100%;
+    margin: auto;
+  }
+  .news-section .content-title {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+  }
+  .news-section .content-text {
+    font-size: 1.3rem;
+  }
+  .news-section .news-list .news-item .time-box span.time i {
+    margin-right: 5px;
+  }
+}
+.benefit-section {
+  position: relative;
+  padding-bottom: 116px;
+}
+.benefit-section .content-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+.benefit-section .content-text {
+  margin: 24px 0 50px;
+}
+.benefit-section .benefit-list .benefit-item {
+  height: 380px;
+  border-radius: 8.333px;
+  background: #fff;
+}
+.benefit-section .benefit-list .benefit-item .images {
+  width: 100%;
+}
+.benefit-section .benefit-list .benefit-item .images img {
+  width: 100%;
+}
+.benefit-section .benefit-list .benefit-item .text-wrap {
+  padding: 24.17px 27.5px 0;
+}
+.benefit-section .benefit-list .benefit-item .text-wrap .title {
+  color: #e05000;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.benefit-section .benefit-list .benefit-item:hover .text-wrap .title {
+  text-shadow: 0px 3.333px 3.333px rgba(0, 0, 0, 0.25);
+}
+.benefit-section .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 360.833px;
+  background: var(--Orange-100, #fff0e7);
+}
+
+@media screen and (max-width: 1399.98px) {
+  .benefit-section .container {
+    max-width: 1140px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  .benefit-section .container {
+    max-width: 960px;
+    margin: auto;
+  }
+  .benefit-section .content-title {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .benefit-section {
+    padding-bottom: 0;
+  }
+  .benefit-section .container {
+    max-width: 720px;
+    margin: auto;
+  }
+  .benefit-section .content-title {
+    font-size: 2.5rem;
+  }
+  .benefit-section .content-text {
+    font-size: 1.4rem;
+  }
+  .benefit-section .benefit-list .benefit-item {
+    height: fit-content;
+  }
+  .benefit-section .benefit-list .benefit-item .text-wrap {
+    padding: 10px 0 20px;
+  }
+  .benefit-section .benefit-list .benefit-item .text-wrap .title {
+    font-size: 1.8rem;
+  }
+  .benefit-section .benefit-list .benefit-item .text-wrap .text {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .benefit-section .container {
+    max-width: 540px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .benefit-section {
+    padding-top: 70px;
+  }
+  .benefit-section .container {
+    max-width: 90%;
+    margin: auto;
+  }
+  .benefit-section .content-title {
+    font-size: 2.3rem;
+  }
+  .benefit-section .content-text {
+    font-size: 1.3rem;
+  }
+  .benefit-section .benefit-list .benefit-item .text-wrap .title {
+    font-size: 1.6rem;
+  }
+  .benefit-section .benefit-list .benefit-item .text-wrap .text {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 450.98px) {
+  .benefit-section {
+    padding-top: 50px;
+  }
+  .benefit-section .container {
     max-width: 100%;
     margin: auto;
   }

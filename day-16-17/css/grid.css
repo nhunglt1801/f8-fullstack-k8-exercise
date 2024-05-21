@@ -233,6 +233,9 @@
   .d-lg-flex {
     display: flex;
   }
+  .d-lg-block {
+    display: block;
+  }
   .align-lg-center {
     align-items: center;
   }

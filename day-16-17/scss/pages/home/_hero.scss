@@ -1,5 +1,6 @@
 .hero-section {
     margin-top: 108px;
+    padding-top: 0;
     height: 708px;
     position: relative;
     overflow: hidden;
@@ -62,9 +63,8 @@
 }
 @include media-extra-desktop {
     .hero-section {
-        .container {
-            max-width: 1140px;
-        }
+        @include containerWidth(1140px);
+
         .images {
             img {
                 height: 90%;
@@ -78,9 +78,8 @@
 }
 @include media-desktop {
     .hero-section {
-        .container {
-            max-width: 960px;
-        }
+        @include containerWidth(960px);
+
         height: 500px;
         .content {
             .pretitle {
@@ -105,16 +104,15 @@
 }
 @include media-tablet {
     .hero-section {
-        .container {
-            max-width: 720px;
-        }
+        @include containerWidth(720px);
+
         height: 400px;
         .content {
             .pretitle {
                 font-size: 2rem;
             }
             .title {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
                 width: 100%;
             }
             .text {
@@ -134,9 +132,7 @@
 }
 @include media-small-tablet {
     .hero-section {
-        .container {
-            max-width: 540px;
-        }
+        @include containerWidth(540px);
         .images {
             img {
                 top: 75%;
@@ -156,21 +152,18 @@
 }
 @include media-mobile {
     .hero-section {
+        height: fit-content;
         margin-top: 80px;
+        padding: 50px 0;
+        @include containerWidth(100%);
+        text-align: center;
         .container {
             max-width: 100%;
         }
         .content {
-            .pretitle {
-                font-size: 1.6rem;
-            }
-            .title {
-                font-size: 2.3rem;
-                width: 75%;
-            }
+            .title,
             .text {
-                font-size: 1.3rem;
-                width: 65%;
+                width: 100%;
             }
         }
         .images {
@@ -185,14 +178,20 @@
 }
 @include media-small-mobile {
     .hero-section {
-        .images {
-            img {
-                height: 50%;
-            }
-            p {
-                left: 63%;
-                font-size: 4.5rem;
+        @include containerWidth(100%);
+        .content {
+            .text {
+                font-size: 1.3rem;
             }
         }
+        // .images {
+        //     img {
+        //         height: 50%;
+        //     }
+        //     p {
+        //         left: 63%;
+        //         font-size: 4.5rem;
+        //     }
+        // }
     }
 }

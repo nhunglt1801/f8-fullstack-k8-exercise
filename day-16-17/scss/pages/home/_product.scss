@@ -1,5 +1,4 @@
 .product-section {
-    @include section-base;
     .title {
         font-size: $headingSize;
         font-weight: 800;
@@ -42,7 +41,6 @@
                 text-align: center;
                 position: relative;
                 &.text-shadow {
-                    padding: 0px 44.333px 0.667px 44px;
                     text-shadow: 0px 3.333px 3.333px rgba(0, 0, 0, 0.25);
                 }
                 &::after {
@@ -143,11 +141,80 @@
         }
     }
 }
+@include media-mobile {
+    .product-section {
+        @include paddingTop(70px);
+        .product-list {
+            width: 100%;
+            .row {
+                row-gap: 40px;
+            }
+            .product-item {
+                .image {
+                    width: 150px;
+                    height: 150px;
+                    margin-bottom: 60px;
+                    img {
+                        max-width: 90%;
+                    }
+                }
+                .name,
+                .price {
+                    margin-bottom: 15px;
+                }
+                .desc,
+                .price,
+                .btn {
+                    font-size: 1.3rem;
+                }
+                .name,
+                .price span {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
 @include media-small-mobile {
     .product-section {
+        @include paddingTop(50px);
         .title {
-            font-size: $headingSize-small;
             margin-bottom: 40px;
+        }
+        .product-list {
+            .row {
+                row-gap: 20px;
+            }
+            .product-item {
+                .image {
+                    width: 120px;
+                    height: 120px;
+                    margin-bottom: 20px;
+                    img {
+                        max-width: 100%;
+                        bottom: 0%;
+                    }
+                    &.bg-orange,
+                    &.bg-green {
+                        background: none;
+                    }
+                }
+                .name,
+                .price {
+                    margin-bottom: 10px;
+                }
+                .btn {
+                    font-size: 1rem;
+                }
+                .desc,
+                .price {
+                    font-size: 1.1rem;
+                }
+                .name,
+                .price span {
+                    font-size: 1.2rem;
+                }
+            }
         }
     }
 }
