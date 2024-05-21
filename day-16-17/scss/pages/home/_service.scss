@@ -1,0 +1,121 @@
+.service-section {
+    .service-list {
+        @include center(90%);
+        .row {
+            row-gap: 30px;
+        }
+        .service-item {
+            @include center(90%);
+            &-image {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 55px;
+                    height: auto;
+                }
+            }
+            &-content {
+                .title {
+                    font-size: 2rem;
+                    line-height: 1.6;
+                    font-weight: 600;
+                }
+                .text {
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+}
+
+@include media-extra-desktop {
+    .service-section {
+        @include containerWidth(1140px);
+        .service-list {
+            @include center(100%);
+        }
+    }
+}
+@include media-desktop {
+    .service-section {
+        @include containerWidth(960px);
+        .service-list {
+            .service-item {
+                @include center(100%);
+                &-image {
+                }
+                &-content {
+                    .title {
+                        font-size: 1.8rem;
+                    }
+                    .text {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-tablet {
+    .service-section {
+        @include containerWidth(720px);
+        .service-list {
+            .service-item {
+                &-content {
+                    .title {
+                        font-size: 1.7rem;
+                    }
+                    .text {
+                        font-size: $textSize-tablet;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-small-tablet {
+    .service-section {
+        @include containerWidth(540px);
+        .service-list {
+            @include center(100%);
+        }
+    }
+}
+@include media-mobile {
+    .service-section {
+        @include containerWidth(100%);
+        @include paddingTop(50px);
+        .service-list {
+            @include center(80%);
+            .service-item {
+                &-content {
+                    .title {
+                        font-size: $textSize;
+                    }
+                    .text {
+                        font-size: $textSize-small;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-small-mobile {
+    .service-section {
+        .service-list {
+            @include center(100%);
+            .service-item {
+                @include center(90%);
+                &-image {
+                    img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
