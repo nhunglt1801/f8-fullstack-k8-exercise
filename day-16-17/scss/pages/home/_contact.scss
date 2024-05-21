@@ -1,0 +1,118 @@
+.form-section {
+    padding-bottom: 100px;
+    .image {
+        width: 100%;
+    }
+    .content {
+        margin-top: 50px;
+        &-title {
+            font-size: $f-20;
+            font-weight: 600;
+            margin-bottom: 26px;
+        }
+        .form {
+            .row {
+                row-gap: 22.67px;
+            }
+            .form-field {
+                border-radius: 6.667px;
+                border: 0.833px solid $grey-500;
+                padding: 13.333px;
+                input::placeholder,
+                textarea::placeholder {
+                    color: $grey-500;
+                }
+            }
+            .btn-wrap {
+                text-align: right;
+            }
+            .btn-submit {
+                width: 128px;
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+@include media-extra-desktop {
+    .form-section {
+        @include containerWidth(1140px);
+    }
+}
+@include media-desktop {
+    .form-section {
+        @include containerWidth(960px);
+        .content {
+            &-title {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            .form {
+                .row {
+                    row-gap: 15px;
+                }
+                .form-field {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+@include media-tablet {
+    .form-section {
+        @include containerWidth(720px);
+
+        .row {
+            row-gap: 50px;
+        }
+        .image,
+        .content {
+            @include center(80%);
+        }
+        .image {
+            @include dflex-center {
+                justify-content: center;
+            }
+        }
+        .content {
+            text-align: center;
+            .form {
+                .form-field {
+                    text-align: left;
+                    input,
+                    textarea {
+                        font-size: $textSize-tablet;
+                    }
+                }
+                .btn-wrap {
+                    text-align: center;
+                }
+                .btn-submit {
+                    font-size: $textSize-tablet;
+                }
+            }
+        }
+    }
+}
+@include media-small-tablet {
+    .form-section {
+        @include containerWidth(540px);
+    }
+}
+@include media-mobile {
+    .form-section {
+        @include containerWidth(100%);
+        .image,
+        .content {
+            @include center(90%);
+        }
+    }
+}
+@include media-small-mobile {
+    .form-section {
+        padding-bottom: 50px;
+        .image,
+        .content {
+            @include center(100%);
+        }
+    }
+}

@@ -46,6 +46,14 @@ body {
 section {
     padding-top: 100px;
 }
+input,
+textarea,
+select,
+option {
+    font-family: $primaryText;
+    font-size: $textSize;
+    color: $textColor;
+}
 ::-webkit-scrollbar {
     width: 5px;
 }
