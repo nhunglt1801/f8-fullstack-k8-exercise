@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 5</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Bài tập 5 - Sắp xếp 3 số</h1>
+    <pre>
+<b>Input:</b> Cho trước 3 số a, b, c
+<b>Output:</b> Thực hiện đổi chỗ 3 số a, b, c sao cho 3 số có thứ tự tăng dần
+
+    </pre>
+    <script>
+        var a = prompt("Nhập số a: ");
+        var b = prompt("Nhập số b: ");
+        var c = prompt("Nhập số c: ");
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        a = isNaN(a) ? 0 : a;
+        b = isNaN(b) ? 0 : b;
+        c = isNaN(c) ? 0 : c;
+        var input = `<p><b>Input:</b> a = ${a}, b = ${b}, c = ${c}</p>`;
+        document.write(input);
+        var min = 0, mid = 0, max = 0;
+        if (a <= b && a <= c) {
+            min = a;
+            if (b <= c) {
+                mid = b;
+                max = c;
+            } else {
+                mid = c;
+                max = b;
+            }
+        } else if (b <= a && b <= c) {
+            min = b;
+            if (a <= c) {
+                mid = a;
+                max = c;
+            } else {
+                mid = c;
+                max = a;
+            }
+        } else {
+            min = c;
+            if (a <= b) {
+                mid = a;
+                max = b;
+            } else {
+                mid = b;
+                max = a;
+            }
+        }
+        var output = `<p><b>Output:</b> ${min}, ${mid}, ${max}</p>`;
+        document.write(output);
+    </script>
+</body>
+
+</html>

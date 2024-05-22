@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Bài tập 1 - Hoán vị 2 số</h1>
+    <pre>
+<b>Input:</b> Cho trước 2 số a, b
+<b>Output:</b> Thực hiện hoán vị 2 số không dùng biến trung gian
+
+    </pre>
+    <script>
+        var a = prompt("Nhập số a: ");
+        var b = prompt("Nhập số b: ");
+        a = Number(a);
+        b = Number(b);
+        a = isNaN(a) ? 0 : a;
+        b = isNaN(b) ? 0 : b;
+        var input = `<p><b>Input:</b> a = ${a}, b = ${b}</p>`;
+        document.write(input);
+        b = a + b; a
+        a = b - a;
+        b = b - a;
+        var output = `<p><b>Output:</b> a = ${a}, b = ${b}</p>`;
+        document.write(output);
+    </script>
+
+</body>
+
+</html>

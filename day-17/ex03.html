@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Bài tập 3 - Tìm số lớn nhất</h1>
+    <pre>
+<b>Input:</b> Cho trước 3 số a, b, c
+<b>Output:</b> Tìm số lớn nhất trong 3 số và hiển thị kết quả
+
+</pre>
+    <script>
+        var a = prompt("Nhập số a: ");
+        var b = prompt("Nhập số b: ");
+        var c = prompt("Nhập số c: ");
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        a = isNaN(a) ? 0 : a;
+        b = isNaN(b) ? 0 : b;
+        c = isNaN(c) ? 0 : c;
+        var input = `<p><b>Input:</b> a = ${a}, b = ${b}, c = ${c}</p>`;
+        document.write(input);
+        var max = a;
+        if (max < b) {
+            max = b;
+        } else if (max < c) {
+            max = c;
+        }
+        var output = `<p><b>Output:</b> max = ${max}</p>`;
+        document.write(output);
+    </script>
+</body>
+
+</html>
