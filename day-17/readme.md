@@ -14,8 +14,6 @@
 
 ## Bài 3: Tìm số lớn nhất
 
-Học viên tìm hiểu về câu lệnh rẽ nhánh và giải bài tập sau
-
 - Input: Cho trước 3 số a, b, c
 - Output: Tìm số lớn nhất trong 3 số và hiển thị kết quả
 - [Link bài tập](./ex03.html)
