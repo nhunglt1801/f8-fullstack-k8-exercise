@@ -23,6 +23,7 @@ Học viên viết chương trình tiền điện hàng tháng theo yêu cầu s
 Cho trước số nguyên n. Tính giá trị biểu thức sau
 
 S= 1*2 + 2*3 + 3*4 + ... + n*(n+1)
+
 [Link bài tập](./ex03.html)
 
 ## Bài 4: Viết hàm kiểm tra số nguyên tố
@@ -32,6 +33,7 @@ Viết 1 hàm kiểm tra 1 số có phải số nguyên tố hay không?
 - Hàm có 1 tham số là số cần kiểm tra
 - Hàm có giá trị trả về
 - Gọi hàm trong câu điều kiện if else
+
   [Link bài tập](./ex04.html)
 
 ## Bài 5: Vẽ tam giác số
