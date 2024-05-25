@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3- Tính giá trị biểu thức</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Bài 3- Tính giá trị biểu thức</h1>
+    <pre>
+Cho trước số nguyên n. Tính giá trị biểu thức sau:
+<b>S = 1*2 + 2*3 + 3*4 + ... + n*(n+1)</b>
+    </pre>
+    <label for="number">Nhập n: </label>
+    <input type="number" name="number" id="number" min="0">
+    <button class="btn">Tính biểu thức</button>
+    <p id="result">Kết quả: <span class="text-bold"></span></p>
+    <script>
+        document.querySelector(".btn").onclick = () => {
+            var total = 0;
+            var text;
+            var number = document.querySelector('input#number').value;
+            number = Number(number);
+            if (Number.isInteger(number)) {
+                if (number < 0) {
+                    text = `${number} là số nguyên âm. Vui lòng nhập lại!!`;
+                    document.querySelector("#result span").innerText = text;
+                } else if (number === 0) {
+                    total = 0;
+                } else {
+                    for (var i = 1; i < number; i++) {
+                        total += i * (i + 1);
+                    }
+
+                }
+            } else {
+                text = `${number} là không phải số nguyên. Vui lòng nhập lại!!`;
+                document.querySelector("#result span").innerText = text;
+            }
+            document.querySelector("#result span").innerText = `S = ${total}`;
+        }
+    </script>
+</body>
+
+</html>

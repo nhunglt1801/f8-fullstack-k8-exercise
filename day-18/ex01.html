@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1 - Tính tiền taxi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Bài 1 - Tính tiền taxi</h1>
+    <label for="distance">Số km đã đi: </label>
+    <input type="number" name="distance" id="distance" min="0.00" step="0.01">
+    <button class="btn">Tính tiền taxi</button>
+
+    <p id="result">Số tiền taxi: <span class="text-bold">0</span> VND</p>
+    <script>
+        document.querySelector('button.btn').onclick = () => {
+            var distance = document.querySelector('#distance').value;
+            distance = Number(distance);
+            var bill;
+            if (distance > 0) {
+                if (distance <= 1) {
+                    bill = distance * 15000;
+                } else if (distance > 1 && distance <= 5) {
+                    bill = 15000 + (distance - 1) * 13500;
+                } else if (distance > 5 && distance <= 120) {
+                    bill = 15000 + 4 * 13500 + (distance - 5) * 11000;
+                } else {
+                    bill = (15000 + 4 * 13500 + (distance - 5) * 11000) + (15000 + 4 * 13500 + (distance - 5) * 11000) * 10 / 100;
+
+                }
+            } else {
+                bill = 0;
+            }
+            bill = bill.toLocaleString('vi-VN');
+            document.querySelector("#result span").innerText = bill;
+        }
+    </script>
+</body>
+
+</html>

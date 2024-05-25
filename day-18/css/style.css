@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+input,
+select,
+textarea,
+button {
+  padding: 5px;
+  font-size: inherit;
+}
+
+.text-bold {
+  font-weight: 600;
+}
