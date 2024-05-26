@@ -1,0 +1,221 @@
+function formatCurrency(amount) {
+  return amount.toLocaleString("vi-VN");
+}
+function taxiCost(distance) {
+  var bill = 0;
+  if (distance >= 0 && distance <= 1) {
+    bill = distance * 15000;
+  } else if (distance > 1 && distance <= 5) {
+    bill = 15000 + (distance - 1) * 13500;
+  } else if (distance > 5 && distance <= 120) {
+    bill = 15000 + 4 * 13500 + (distance - 5) * 11000;
+  } else {
+    bill =
+      15000 +
+      4 * 13500 +
+      (distance - 5) * 11000 +
+      ((15000 + 4 * 13500 + (distance - 5) * 11000) * 10) / 100;
+  }
+  return bill;
+}
+function eletricityCost(consumption) {
+  var bill = 0;
+  var priceLevel1 = 1678;
+  var priceLevel2 = 1734;
+  var priceLevel3 = 2014;
+  var priceLevel4 = 2536;
+  var priceLevel5 = 2834;
+  var priceLevel6 = 2927;
+  if (consumption > 0) {
+    if (consumption <= 50) {
+      bill = consumption * priceLevel1;
+    } else if (consumption >= 51 && consumption <= 100) {
+      bill = 50 * priceLevel1 + (consumption - 50) * priceLevel2;
+    } else if (consumption >= 101 && consumption <= 200) {
+      bill =
+        50 * priceLevel1 + 50 * priceLevel2 + (consumption - 100) * priceLevel3;
+    } else if (consumption >= 201 && consumption <= 300) {
+      bill =
+        50 * priceLevel1 +
+        50 * priceLevel2 +
+        100 * priceLevel3 +
+        (consumption - 200) * priceLevel4;
+    } else if (consumption >= 301 && consumption <= 400) {
+      bill =
+        50 * priceLevel1 +
+        50 * priceLevel2 +
+        100 * priceLevel3 +
+        100 * priceLevel4 +
+        (consumption - 300) * priceLevel5;
+    } else {
+      bill =
+        50 * priceLevel1 +
+        50 * priceLevel2 +
+        100 * priceLevel3 +
+        100 * priceLevel4 +
+        100 * priceLevel5 +
+        (consumption - 400) * priceLevel6;
+    }
+  }
+  return bill;
+}
+function isPrimeNumber(n) {
+  if (n % 1 !== 0 || n <= 1) {
+    return false;
+  } else {
+    for (var i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false;
+        break;
+      }
+    }
+  }
+  return true;
+}
+function generateNumberTriangle(number) {
+  var currentNumber = 1;
+  var result = "";
+  for (var i = 1; i <= number; i++) {
+    for (var j = 1; j <= i; j++) {
+      result += currentNumber + " ";
+      currentNumber++;
+    }
+    result += "<br>";
+  }
+  return result;
+}
+function calculateExpression(number) {
+  var total = 0;
+  if (number === 0) {
+    total = 0;
+  } else {
+    for (var i = 1; i <= number; i++) {
+      total += i * (i + 1);
+    }
+  }
+  return total;
+}
+// Bài 1
+document.querySelector("#ex01 .btn").onclick = () => {
+  var distance = document.querySelector("#distance").value;
+  if (distance === "") {
+    alert("Bạn chưa nhập số km!");
+  } else {
+    distance = Number(distance);
+    if (distance < 0) {
+      text = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      document.querySelector("#ex01 #result span").innerText = text;
+    } else {
+      var bill = taxiCost(distance);
+      document.querySelector("#ex01 #result span").innerText =
+        formatCurrency(bill) + " đ";
+    }
+  }
+};
+
+// Bài 2
+document.querySelector("#ex02 .btn").onclick = () => {
+  var consumption = document.querySelector("#electricity-number").value;
+  if (consumption === "") {
+    alert("Bạn chưa nhập số điện!");
+  } else {
+    consumption = Number(consumption);
+    if (consumption < 0) {
+      text = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      document.querySelector("#ex02 #result span").innerText = text;
+    } else {
+      var bill = eletricityCost(consumption);
+      document.querySelector("#ex02 #result span").innerText =
+        formatCurrency(bill) + " đ";
+    }
+  }
+};
+
+// Bài 3
+document.querySelector("#ex03 .btn").onclick = () => {
+  var total;
+  var text = "";
+  var number = document.querySelector("#ex03 input#number").value;
+  if (number === "") {
+    alert("Bạn chưa nhập số n!");
+  } else {
+    number = Number(number);
+    if (number % 1 !== 0 || number < 0) {
+      text = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      document.querySelector("#ex03 #result span").innerText = text;
+    } else {
+      total = calculateExpression(number);
+      document.querySelector("#ex03 #result span").innerText = `S = ${total}`;
+    }
+  }
+};
+
+// Bài 4
+document.querySelector("#ex04 .btn").onclick = () => {
+  var number = document.querySelector("#ex04 input#number").value;
+  var text;
+  if (number === "") {
+    alert("Bạn chưa nhập số!");
+  } else {
+    number = Number(number);
+    if (isPrimeNumber(number)) {
+      text = `${number} là số nguyên tố`;
+    } else if (number < 1) {
+      text = `Vui lòng nhập số nguyên dương lớn hơn 1`;
+    } else {
+      text = `${number} không phải là số nguyên tố`;
+    }
+    document.querySelector("#ex04 #result span").innerText = text;
+  }
+};
+
+// Bài 5
+document.querySelector("#ex05 .btn").onclick = () => {
+  var number = document.querySelector("#ex05 input#number").value;
+  var result;
+  if (number === "") {
+    alert("Bạn chưa nhập số điện!");
+  } else {
+    number = Number(number);
+    if (number % 1 !== 0 || number <= 0) {
+      result = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+    } else {
+      result = generateNumberTriangle(number);
+    }
+    document.getElementById("triangle").innerHTML = result;
+  }
+};
+
+// Bài 6
+function chessBoardTable() {
+  var table = document.getElementById("chessBoard");
+  for (var i = 1; i <= 8; i++) {
+    var row = document.createElement("tr");
+    for (var j = 1; j <= 8; j++) {
+      var cell = document.createElement("td");
+      if ((i + j) % 2 === 0) {
+        cell.className = "white";
+      } else {
+        cell.className = "black";
+      }
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+}
+chessBoardTable();
+
+// Bài 7
+function multiplicationTable(number) {
+  var table = document.getElementById("multiplicationTable");
+  for (var i = 1; i <= 10; i++) {
+    var row = document.createElement("tr");
+    for (var j = 1; j <= number; j++) {
+      var cell = document.createElement("td");
+      cell.innerHTML = `${j} * ${i} = ${i * j}`;
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+}
+multiplicationTable(10);

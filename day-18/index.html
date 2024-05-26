@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập buổi 18</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;">Bài tập buổi 18</h1>
+    <main>
+        <section id="ex01">
+            <h2>Bài 1 - Tính tiền taxi</h2>
+            <input type="number" name="distance" id="distance" min="0.00" step="0.01" placeholder="Nhập số km">
+            <button class="btn">Tính tiền taxi</button>
+            <p id="result">Số tiền taxi: <span class="text-bold"></span></p>
+        </section>
+        <section id="ex02">
+            <h2>Bài 2 - Tính tiền điện</h2>
+            <input type="number" name="electricity-number" id="electricity-number" min="0" placeholder="Nhập số điện">
+            <button class="btn">Tính tiền điện</button>
+            <p id="result">Số tiền điện: <span class="text-bold"></span></p>
+        </section>
+        <section id="ex03">
+            <h2>Bài 3 - Tính giá trị biểu thức</h2>
+            <pre>
+Cho trước số nguyên n. Tính giá trị biểu thức sau:
+<b>S = 1*2 + 2*3 + 3*4 + ... + n*(n+1)</b>
+            </pre>
+            <input type="number" name="number" id="number" min="0" placeholder="Nhập n">
+            <button class="btn">Tính biểu thức</button>
+            <p id="result">Kết quả: <span class="text-bold"></span></p>
+        </section>
+        <section id="ex04">
+            <h2>Bài 4 - Viết hàm kiểm tra số nguyên tố</h2>
+            <input type="number" name="number" id="number" min="0" placeholder="Nhập số">
+            <button class="btn">Xem kết quả</button>
+            <p id="result">Kết quả: <span class="text-bold"></span></p>
+        </section>
+        <section id="ex05">
+            <h2>Bài 5 - Vẽ tam giác số</h2>
+            <input type="number" name="number" id="number" min="0" placeholder="Nhập số dòng">
+            <button class="btn">Xem kết quả</button>
+            <p id="result">Kết quả:</p>
+            <span class="text-bold" id="triangle"></span>
+        </section>
+        <section id="ex06">
+            <h2>Bài 6 - Vẽ bàn cờ vua</h2>
+            <table id="chessBoard"></table>
+        </section>
+        <section id="ex07">
+            <h2>Bài 7 - Vẽ bảng cửu chương</h2>
+            <table id="multiplicationTable">
+            </table>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
