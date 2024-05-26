@@ -1,20 +1,26 @@
 function formatCurrency(amount) {
   return amount.toLocaleString("vi-VN");
 }
+
 function taxiCost(distance) {
   var bill = 0;
+  var priceLevel1 = 15000;
+  var priceLevel2 = 13500;
+  var priceLevel3 = 11000;
+
   if (distance >= 0 && distance <= 1) {
-    bill = distance * 15000;
+    bill = distance * priceLevel1;
   } else if (distance > 1 && distance <= 5) {
-    bill = 15000 + (distance - 1) * 13500;
+    bill = priceLevel1 + (distance - 1) * priceLevel2;
   } else if (distance > 5 && distance <= 120) {
-    bill = 15000 + 4 * 13500 + (distance - 5) * 11000;
+    bill = priceLevel1 + 4 * priceLevel2 + (distance - 5) * priceLevel3;
   } else {
     bill =
-      15000 +
-      4 * 13500 +
-      (distance - 5) * 11000 +
-      ((15000 + 4 * 13500 + (distance - 5) * 11000) * 10) / 100;
+      priceLevel1 +
+      4 * priceLevel2 +
+      (distance - 5) * priceLevel3 +
+      ((priceLevel1 + 4 * priceLevel2 + (distance - 5) * priceLevel3) * 10) /
+        100;
   }
   return bill;
 }
