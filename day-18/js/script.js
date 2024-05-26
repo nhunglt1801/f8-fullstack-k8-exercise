@@ -1,13 +1,14 @@
+// Hàm format lại số tiền
 function formatCurrency(amount) {
   return amount.toLocaleString("vi-VN");
 }
 
+// Hàm tính tiền taxi
 function taxiCost(distance) {
   var bill = 0;
   var priceLevel1 = 15000;
   var priceLevel2 = 13500;
   var priceLevel3 = 11000;
-
   if (distance >= 0 && distance <= 1) {
     bill = distance * priceLevel1;
   } else if (distance > 1 && distance <= 5) {
@@ -24,6 +25,8 @@ function taxiCost(distance) {
   }
   return bill;
 }
+
+// Hàm tính tiền điện
 function eletricityCost(consumption) {
   var bill = 0;
   var priceLevel1 = 1678;
@@ -65,6 +68,8 @@ function eletricityCost(consumption) {
   }
   return bill;
 }
+
+// Hàm kiểm tra số nguyên tố
 function isPrimeNumber(n) {
   if (n % 1 !== 0 || n <= 1) {
     return false;
@@ -78,6 +83,8 @@ function isPrimeNumber(n) {
   }
   return true;
 }
+
+// Hàm vẽ tam giác số
 function generateNumberTriangle(number) {
   var currentNumber = 1;
   var result = "";
@@ -90,6 +97,8 @@ function generateNumberTriangle(number) {
   }
   return result;
 }
+
+// Hàm tính biểu thức 1*2 + 2*3 + 3*4 + ... + n*(n+1)
 function calculateExpression(number) {
   var total = 0;
   if (number === 0) {
@@ -101,6 +110,7 @@ function calculateExpression(number) {
   }
   return total;
 }
+
 // Bài 1
 document.querySelector("#ex01 .btn").onclick = () => {
   var distance = document.querySelector("#distance").value;
@@ -109,7 +119,7 @@ document.querySelector("#ex01 .btn").onclick = () => {
   } else {
     distance = Number(distance);
     if (distance < 0) {
-      text = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      text = `Vui lòng nhập lại số km lớn hơn 0`;
       document.querySelector("#ex01 #result span").innerText = text;
     } else {
       var bill = taxiCost(distance);
@@ -127,7 +137,7 @@ document.querySelector("#ex02 .btn").onclick = () => {
   } else {
     consumption = Number(consumption);
     if (consumption < 0) {
-      text = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      text = `Vui lòng nhập số điện lớn hơn 0`;
       document.querySelector("#ex02 #result span").innerText = text;
     } else {
       var bill = eletricityCost(consumption);
@@ -147,7 +157,7 @@ document.querySelector("#ex03 .btn").onclick = () => {
   } else {
     number = Number(number);
     if (number % 1 !== 0 || number < 0) {
-      text = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      text = `Vui lòng nhập số nguyên lớn hơn 0`;
       document.querySelector("#ex03 #result span").innerText = text;
     } else {
       total = calculateExpression(number);
@@ -184,7 +194,7 @@ document.querySelector("#ex05 .btn").onclick = () => {
   } else {
     number = Number(number);
     if (number % 1 !== 0 || number <= 0) {
-      result = `Số vừa nhập không hợp lệ. Vui lòng nhập lại!`;
+      result = `Vui lòng nhập số nguyên dương lớn hơn 1`;
     } else {
       result = generateNumberTriangle(number);
     }
@@ -193,6 +203,7 @@ document.querySelector("#ex05 .btn").onclick = () => {
 };
 
 // Bài 6
+// Hàm vẽ bàn cờ vua
 function chessBoardTable() {
   var table = document.getElementById("chessBoard");
   for (var i = 1; i <= 8; i++) {
@@ -212,6 +223,7 @@ function chessBoardTable() {
 chessBoardTable();
 
 // Bài 7
+// Hàm vẽ bảng cửu chương
 function multiplicationTable(number) {
   var table = document.getElementById("multiplicationTable");
   for (var i = 1; i <= 10; i++) {
@@ -225,3 +237,30 @@ function multiplicationTable(number) {
   }
 }
 multiplicationTable(10);
+
+// Bài 8
+// Hàm tính biểu thức 1 + 1/2 + 1/3 + 1/4 + 1/5 + … + 1/N
+function calculateSum(n) {
+  if (n === 1) {
+    return 1;
+  } else {
+    return 1 / n + calculateSum(n - 1);
+  }
+}
+document.querySelector("#ex08 .btn").onclick = () => {
+  var total;
+  var text = "";
+  var number = document.querySelector("#ex08 input#number").value;
+  if (number === "") {
+    alert("Bạn chưa nhập số n!");
+  } else {
+    number = Number(number);
+    if (number % 1 !== 0 || number <= 0) {
+      text = `Vui lòng nhập số nguyên lớn hơn 0`;
+      document.querySelector("#ex08 #result span").innerText = text;
+    } else {
+      total = calculateSum(number);
+      document.querySelector("#ex08 #result span").innerText = `S = ${total}`;
+    }
+  }
+};

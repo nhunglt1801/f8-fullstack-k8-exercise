@@ -33,7 +33,6 @@ section#ex07 {
 }
 table#chessBoard {
   border-collapse: collapse;
-  margin-inline: auto;
   border: 1px solid black;
 }
 
