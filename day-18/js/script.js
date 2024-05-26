@@ -174,7 +174,7 @@ document.querySelector("#ex05 .btn").onclick = () => {
   var number = document.querySelector("#ex05 input#number").value;
   var result;
   if (number === "") {
-    alert("Bạn chưa nhập số điện!");
+    alert("Bạn chưa nhập số dòng!");
   } else {
     number = Number(number);
     if (number % 1 !== 0 || number <= 0) {
