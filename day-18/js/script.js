@@ -9,6 +9,7 @@ function taxiCost(distance) {
   var priceLevel1 = 15000;
   var priceLevel2 = 13500;
   var priceLevel3 = 11000;
+  var discount = 10;
   if (distance >= 0 && distance <= 1) {
     bill = distance * priceLevel1;
   } else if (distance > 1 && distance <= 5) {
@@ -16,12 +17,8 @@ function taxiCost(distance) {
   } else if (distance > 5 && distance <= 120) {
     bill = priceLevel1 + 4 * priceLevel2 + (distance - 5) * priceLevel3;
   } else {
-    bill =
-      priceLevel1 +
-      4 * priceLevel2 +
-      (distance - 5) * priceLevel3 +
-      ((priceLevel1 + 4 * priceLevel2 + (distance - 5) * priceLevel3) * 10) /
-        100;
+    bill = priceLevel1 + 4 * priceLevel2 + (distance - 5) * priceLevel3;
+    bill *= 1 - discount / 100;
   }
   return bill;
 }
@@ -68,17 +65,16 @@ function eletricityCost(consumption) {
   }
   return bill;
 }
-
 // Hàm kiểm tra số nguyên tố
 function isPrimeNumber(n) {
-  if (n % 1 !== 0 || n <= 1) {
-    return false;
-  } else {
-    for (var i = 2; i < n; i++) {
-      if (n % i == 0) {
-        return false;
-        break;
-      }
+  if (n <= 1) return false;
+  if (n === 2) return true;
+  if (n % 2 === 0) return false;
+
+  var sqrt = Math.sqrt(n);
+  for (var i = 3; i <= sqrt; i += 2) {
+    if (n % i === 0) {
+      return false;
     }
   }
   return true;
