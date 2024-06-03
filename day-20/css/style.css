@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: gray;
+}
+
+#heading {
+  width: 1200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+}
+#heading span {
+  color: red;
+}
