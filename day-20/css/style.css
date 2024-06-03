@@ -18,6 +18,6 @@ body {
   background: white;
   border-radius: 20px;
 }
-#heading span {
+#heading .highlight {
   color: red;
 }
