@@ -50,7 +50,7 @@ document.write(
 );
 var element = 2;
 console.log("Chèn thêm phần tử: ", element);
-document.write(`<p>Chèn thêm  số vào bất kỳ: ${element}</p>`);
+document.write(`<p>Chèn thêm phần tử: ${element}</p>`);
 
 numbers = insertElement(element, numbers);
 console.log("Mảng sau khi thêm phần tử: ", numbers);
@@ -58,7 +58,7 @@ document.write(`<p>Mảng sau khi thêm phần tử: [${numbers}]</p>`);
 
 var element = 14;
 console.log("Chèn thêm phần tử: ", element);
-document.write(`<p>Chèn thêm  số vào bất kỳ: ${element}</p>`);
+document.write(`<p>Chèn thêm phần tử: ${element}</p>`);
 
 numbers = insertElement(element, numbers);
 console.log("Mảng sau khi thêm phần tử: ", numbers);
@@ -66,7 +66,7 @@ document.write(`<p>Mảng sau khi thêm phần tử: [${numbers}]</p>`);
 
 var element = 0;
 console.log("Chèn thêm phần tử: ", element);
-document.write(`<p>Chèn thêm  số vào bất kỳ: ${element}</p>`);
+document.write(`<p>Chèn thêm phần tử: ${element}</p>`);
 
 numbers = insertElement(element, numbers);
 console.log("Mảng sau khi thêm phần tử: ", numbers);
