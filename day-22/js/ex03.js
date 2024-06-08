@@ -17,9 +17,17 @@ function createElement(arr) {
     if (Array.isArray(value)) {
       value.forEach((item, index) => {
         if (index === value.length - 1) {
-          html += `${item}`;
+          if (typeof item === "string") {
+            html += `"${item}" `;
+          } else {
+            html += `${item} `;
+          }
         } else {
-          html += `${item}, `;
+          if (typeof item === "string") {
+            html += `"${item}", `;
+          } else {
+            html += `${item}, `;
+          }
         }
       });
     } else {
@@ -35,7 +43,9 @@ var arr = [
   ["a", 1, true],
   ["b", 2, false],
 ];
-result = createElement(separateDataType(arr));
+
+var result = createElement(separateDataType(arr));
+console.log(result);
 var data = `
 <h2>Bài 3</h2>
 <p class="text-bold">Tách phần tử trong mảng theo đúng kiểu dữ liệu</p>
