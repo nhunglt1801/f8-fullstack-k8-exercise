@@ -7,6 +7,9 @@ function getItemCommon(arrA, arrB) {
   arr = arrA.filter(function (item) {
     return arrB.includes(item);
   });
+  arr = arr.filter(function (item, index) {
+    return arr.indexOf(item) === index;
+  });
   return arr;
 }
 function createElement(arr) {
@@ -30,8 +33,8 @@ function createElement(arr) {
   return html;
 }
 
-var arrA = [1, 4, 3, 2];
-var arrB = [5, 2, 6, 7, 1];
+var arrA = [1, 4, 3, 2, 1, 6, 6];
+var arrB = [5, 2, 6, 7, 1, 6];
 var data = `
 <h2>Bài 1</h2>
 <p class="text-bold">Lấy kết quả giao giữa 2 mảng</p>
