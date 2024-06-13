@@ -114,7 +114,7 @@ function getNumberIntegerNotInArray(arr) {
 }
 var nums = [3, 4, -1, 1];
 console.log(`Mảng đã cho: `, nums);
+document.write(`<h2>Bài 3</h2>Mảng đã cho: [${nums}]`);
 var result = getNumberIntegerNotInArray(nums);
 console.log(result);
-document.write(`<h2>Bài 3</h2>Mảng đã cho: [${nums}]`);
 document.write(`<p>${result}</p>`);
