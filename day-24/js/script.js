@@ -142,28 +142,27 @@ var createUser = function (name, password, email) {
 var data = [];
 
 var handleRegister = function (name, password, email) {
-  var validData =
-    typeof name === "string" &&
-    name &&
-    typeof password === "string" &&
-    password &&
-    typeof email === "string" &&
-    email;
-  if (validData) {
-    var findUser = data.find(function (user) {
-      return user.email === email;
-    });
-    if (!findUser) {
-      var user = createUser(name, password, email);
-      data.push(user);
-      return user;
-    } else {
-      console.log("User đã tồn tại: ", findUser);
-      return;
-    }
+  if (!name || !password || !email) {
+    console.log("Vui lòng nhập đầy đủ thông tin");
+    return;
   }
-  console.log("Vui lòng nhập đầy đủ thông tin");
-  return;
+  name = String(name);
+  password = String(password);
+  email = String(email);
+  var findUser = data.find(function (user) {
+    return user.email === email;
+  });
+  if (!findUser) {
+    var user = createUser(name, password, email);
+    user.role = "user";
+    data.push(user);
+    console.log("Đăng ký thành công");
+    return user;
+  } else {
+    console.log("User đã tồn tại: ", findUser);
+    console.log("Vui lòng nhập lại địa chỉ email khác");
+    return;
+  }
 };
 
 var handleLogin = function (email, password) {
@@ -198,7 +197,7 @@ var dataRegister = handleRegister(
 );
 var dataRegister = handleRegister(
   "Nguyen Van C",
-  "12345678",
+  12345678,
   "nguyenvanc@email.com"
 );
 console.log("Data User: ", data);
