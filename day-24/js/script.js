@@ -20,24 +20,27 @@ var errors = {
 var getError = function (field) {
   var fields = field.split(".");
   var mainField = fields[0];
-  if (errors[mainField]) {
-    if (fields.length > 1) {
-      var subField = fields[1];
-      if (errors[mainField] && errors[mainField][subField]) {
-        //   console.log(errors[mainField]);
-        //   console.log(subField);
-        return errors[mainField][subField];
-      }
-      return new Error("Không tìm thấy lỗi");
-    }
-    return errors[mainField].required;
-  }
-  return new Error("Không tìm thấy lỗi");
+  var subField = fields[1];
+  var errorMessage =
+    errors[mainField]?.[subField] ||
+    errors[mainField]?.required ||
+    "Không tìm thấy lỗi";
+  return errorMessage;
+  // if (errors[mainField]) {
+  //   if (fields.length > 1) {
+  //     if (errors[mainField] && errors[mainField][subField]) {
+  //       return errors[mainField][subField];
+  //     }
+  //     return new Error("Không tìm thấy lỗi");
+  //   }
+  //   return errors[mainField].required;
+  // }
+  // return new Error("Không tìm thấy lỗi");
 };
 console.log(getError("123")); // Không tìm thấy lỗi
 console.log(getError("name")); //Vui lòng nhập họ tên
 console.log(getError("name.min")); //Họ tên phải từ 5 ký tự
-console.log(getError("name.123")); //Không tìm thấy lỗi
+console.log(`getError("name.123"):`, getError("name.123")); //Không tìm thấy lỗi
 
 console.log(getError("email")); //Vui lòng nhập địa chỉ email
 console.log(getError("email.email")); //Định dạng email không hợp lệ
@@ -64,8 +67,8 @@ ex01.appendChild(resultEx01);
 console.log("Bài 2:");
 
 const customers = [
-  { name: "Nguyễn Văn A", age: 11, address: "Ha Noi" },
-  { name: "Nguyễn Văn B", age: 2, address: "Hai Phong" },
+  { name: "Nguyễn Văn A ", age: 11, address: "Ha Noi" },
+  { name: "Nguyễn Văn B ", age: 2, address: "Hai Phong" },
   { name: "Nguyễn Văn C", age: 12, address: "TP.HCM" },
 ];
 
@@ -94,7 +97,7 @@ var createCustomers = function (customers) {
   if (validData) {
     return customers
       .map(function (customer) {
-        var shortNameArr = customer.name.split(" ");
+        var shortNameArr = customer.name.trim().split(" ");
         var shortName =
           shortNameArr[0] + " " + shortNameArr[shortNameArr.length - 1];
         return {
