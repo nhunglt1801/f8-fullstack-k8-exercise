@@ -112,7 +112,7 @@ function nestedCategories(categories, parentID = 0) {
 }
 
 var result = nestedCategories(categories);
-console.log(result);
+console.log("categories = " + JSON.stringify(result, null, 2));
 
 // Bài 4:
 Array.prototype.reduce2 = function (callback, initialValue) {
