@@ -110,8 +110,32 @@ function nestedCategories(categories, parentID = 0) {
   }
   return result;
 }
+// function nest(data) {
+//   const map = {};
+//   const result = [];
 
+//   // Tạo các đối tượng với mảng children rỗng
+//   data.forEach((item) => {
+//     map[item.id] = { ...item, children: [] };
+//   });
+//   console.log(data);
+//   console.log(map);
+//   // Xây dựng cây
+//   data.forEach((item) => {
+//     if (item.parent === 0) {
+//       result.push(map[item.id]);
+//     } else {
+//       map[item.parent].children.push(map[item.id]);
+//     }
+//   });
+
+//   return result;
+// }
+
+// const nestedData = nest(categories);
+// console.log(nestedData);
 var result = nestedCategories(categories);
+
 console.log("categories = " + JSON.stringify(result, null, 2));
 
 // Bài 4:
