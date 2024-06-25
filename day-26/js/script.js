@@ -33,7 +33,7 @@ Array.prototype.filter2 = function (callback) {
   var len = this.length;
   if (len === 0) return arr;
   for (var i = 0; i < len; i++) {
-    if (callback(this[i])) {
+    if (callback(this[i],i,this)) {
       arr[arr.length] = this[i];
     }
   }
