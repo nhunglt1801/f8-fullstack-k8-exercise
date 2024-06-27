@@ -1,0 +1,215 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:root {
+  --primary-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
+  --font-size: 1.6rem;
+  --text-color: #222222;
+  --gray-200: #808080;
+  --primary-color: #1a7900;
+  --link-color: #2361ff;
+  --gray-100: #eeeeee;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: var(--primary-font);
+  font-size: var(--font-size);
+}
+a {
+  text-decoration: none;
+}
+input,
+button,
+select,
+textarea {
+  font-family: var(--primary-font);
+  border: none;
+  font-size: 1.5rem;
+}
+button {
+  background: none;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.header .btn-login {
+  padding: 10px 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.header .btn-login:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Modal Common style */
+.modal {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal .modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.modal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 3;
+}
+.modal .modal-close:hover {
+  color: var(--primary-color);
+}
+.modal-box {
+  position: fixed;
+  width: 460px;
+  min-height: 530px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: #fff;
+  z-index: 3;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.modal-box .modal-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}
+.modal-box .modal-logo img {
+  width: 110px;
+  height: auto;
+}
+.modal-box .modal-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-box .modal-action .btn-modal {
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: var(--gray-100);
+  color: var(--gray-200);
+  line-height: 1.5;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-box .modal-action .btn-modal.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.modal-box .modal-content {
+  margin: 20px;
+  position: relative;
+}
+.modal-box .modal-content .form {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-box .modal-content .form.active {
+  opacity: 1;
+  visibility: visible;
+}
+.form .form-field {
+  margin-bottom: 20px;
+}
+.form .form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form[name="register"] .form-field label {
+  margin-top: 20px;
+}
+.form .form-field .form-item {
+  border: 1px solid var(--gray-100);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.form .form-field .form-item input {
+  width: 100%;
+}
+.form .form-field .form-item input::placeholder {
+  color: var(--gray-200);
+}
+.form .form-field .form-item .btn-eye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  translate: 0 -50%;
+  cursor: pointer;
+  z-index: 3;
+  color: var(--gray-200);
+}
+.form .btn-submit {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--primary-color);
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.form .text,
+.form .policy-register {
+  font-size: 1.4rem;
+}
+
+/* Modal Login Style */
+
+/* Modal Register Style */
