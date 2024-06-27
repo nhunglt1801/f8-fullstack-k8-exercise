@@ -38,14 +38,15 @@
                 <button class="btn-modal" id="btn-modal-register">Đăng ký</button>
             </div>
             <div class="modal-content">
-                <form id="modal-login" class="form" action="post" method="post" name="login">
-                    <div class="form-field">
+                <form id="modal-login" class="form active" action="post" method="post" name="login">
+                    <div class="form-group">
                         <label for="login-email">Email</label>
                         <div class="form-item">
                             <input type="text" name="email" id="login-email" placeholder="Email">
                         </div>
+                        <span class="form-message">abc</span>
                     </div>
-                    <div class="form-field">
+                    <div class="form-group">
                         <label for="login-password">Mật khẩu</label>
                         <div class="form-item">
                             <input type="password" name="password" id="login-password" placeholder="Mật khẩu">
@@ -53,24 +54,27 @@
                                 <i class="fa-regular fa-eye-slash"></i>
                             </button>
                         </div>
+                        <span class="form-message"></span>
                     </div>
                     <button class="btn-submit" type="submit">Đăng nhập</button>
                 </form>
-                <form id="modal-register" class="form active" action="post" method="post" name="register">
+                <form id="modal-register" class="form" action="post" method="post" name="register">
                     <p class="text">Hoàn thành đăng ký, và bắt đầu trải nghiệm ngay!</p>
-                    <div class="form-field">
+                    <div class="form-group">
                         <label for="register-fullname">Họ và tên</label>
                         <div class="form-item">
                             <input type="text" name="fullname" id="register-fullname" placeholder="Họ và tên">
                         </div>
+                        <span class="form-message"></span>
                     </div>
-                    <div class="form-field">
+                    <div class="form-group">
                         <label for="register-email">Email</label>
                         <div class="form-item">
                             <input type="text" name="email" id="register-email" placeholder="Email">
                         </div>
+                        <span class="form-message"></span>
                     </div>
-                    <div class="form-field">
+                    <div class="form-group">
                         <label for="register-password">Mật khẩu</label>
                         <div class="form-item">
                             <input type="password" name="password" id="register-password" placeholder="Mật khẩu">
@@ -78,6 +82,7 @@
                                 <i class="fa-regular fa-eye-slash"></i>
                             </button>
                         </div>
+                        <span class="form-message"></span>
                     </div>
                     <p class="policy-register">Bằng cách đăng ký tài khoản, bạn cũng đồng thời chấp nhận mọi
                         <a href="#0">điều kiện về qui định và chính sách của Dân trí</a>
@@ -86,7 +91,6 @@
                 </form>
             </div>
         </div>
-
         <div class="modal-overlay"></div>
     </div>
     <script src="js/main.js"></script>

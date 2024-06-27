@@ -69,6 +69,7 @@ button {
   inset: 0;
   opacity: 0;
   visibility: hidden;
+  width: 100%;
 }
 .modal.active {
   opacity: 1;
@@ -108,6 +109,7 @@ button {
 }
 .modal-box .modal-logo {
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,17 +153,17 @@ button {
   opacity: 1;
   visibility: visible;
 }
-.form .form-field {
+.form .form-group {
   margin-bottom: 20px;
 }
-.form .form-field label {
+.form .form-group label {
   display: block;
   margin-bottom: 5px;
 }
-.form[name="register"] .form-field label {
+.form[name="register"] .form-group label {
   margin-top: 20px;
 }
-.form .form-field .form-item {
+.form .form-group .form-item {
   border: 1px solid var(--gray-100);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -172,13 +174,13 @@ button {
   overflow: hidden;
   position: relative;
 }
-.form .form-field .form-item input {
+.form .form-group .form-item input {
   width: 100%;
 }
-.form .form-field .form-item input::placeholder {
+.form .form-group .form-item input::placeholder {
   color: var(--gray-200);
 }
-.form .form-field .form-item .btn-eye {
+.form .form-group .form-item .btn-eye {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -186,6 +188,18 @@ button {
   cursor: pointer;
   z-index: 3;
   color: var(--gray-200);
+}
+.form-group.invalid .form-item {
+  border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+  color: #f33a58;
+}
+.form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
 }
 .form .btn-submit {
   width: 100%;
