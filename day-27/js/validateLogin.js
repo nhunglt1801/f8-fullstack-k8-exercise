@@ -5,7 +5,7 @@ var emailLogin = formLogin.querySelector("#login-email");
 var passwordLogin = formLogin.querySelector("#login-password");
 var errEmailLogin = formLogin.querySelector(".err-email");
 var errPasswordLogin = formLogin.querySelector(".err-password");
-var eyesBtn = formLogin.querySelector("btn-eye i");
+var eyesBtn = formLogin.querySelector(".btn-eye i");
 
 function getParentElement(element, selector) {
   return element.closest(selector);
@@ -96,6 +96,19 @@ passwordLogin.onblur = function () {
     var formGroup = getParentElement(this, ".form-group");
     formGroup.classList.remove("invalid");
     errPasswordLogin.innerHTML = "";
+  }
+};
+
+// Show/Hide Password
+eyesBtn.onclick = function () {
+  if (passwordLogin.type === "password") {
+    this.classList.add("fa-eye");
+    this.classList.remove("fa-eye-slash");
+    passwordLogin.type = "text";
+  } else {
+    this.classList.add("fa-eye-slash");
+    this.classList.remove("fa-eye");
+    passwordLogin.type = "password";
   }
 };
 
