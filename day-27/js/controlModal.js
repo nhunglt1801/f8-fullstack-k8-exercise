@@ -10,15 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 loginBtn.addEventListener("click", function () {
-  loginBtn.classList.add("active");
+  this.classList.add("active");
   registerBtn.classList.remove("active");
   formLogin.classList.add("active");
   formRegister.classList.remove("active");
+  formLogin.reset();
+  formRegister.reset();
 });
 
 registerBtn.addEventListener("click", function () {
-  registerBtn.classList.add("active");
+  this.classList.add("active");
   loginBtn.classList.remove("active");
   formRegister.classList.add("active");
   formLogin.classList.remove("active");
+  formRegister.reset();
 });
