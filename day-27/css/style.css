@@ -65,23 +65,20 @@ button {
 
 /* Modal Common style */
 .modal {
-  position: fixed;
-  inset: 0;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
 }
 .modal.active {
   opacity: 1;
   visibility: visible;
 }
-.modal .modal-overlay {
+.modal .overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
-.modal .modal-close {
+.modal .btn-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -89,13 +86,12 @@ button {
   cursor: pointer;
   z-index: 3;
 }
-.modal .modal-close:hover {
+.modal .btn-close:hover {
   color: var(--primary-color);
 }
-.modal-box {
+.modal .modal-box {
   position: fixed;
   width: 460px;
-  min-height: 530px;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
@@ -119,13 +115,13 @@ button {
   width: 110px;
   height: auto;
 }
-.modal-box .modal-action {
+.modal-box .modal-header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.modal-box .modal-action .btn-modal {
+.modal-box .modal-header .btn-modal {
   width: 50%;
   text-align: center;
   padding: 10px 0;
@@ -135,23 +131,18 @@ button {
   font-weight: 600;
   cursor: pointer;
 }
-.modal-box .modal-action .btn-modal.active {
+.modal-box .modal-header .btn-modal.active {
   background-color: var(--primary-color);
   color: #fff;
 }
 .modal-box .modal-content {
   margin: 20px;
-  position: relative;
 }
 .modal-box .modal-content .form {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 .modal-box .modal-content .form.active {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 .form .form-group {
   margin-bottom: 20px;
@@ -163,7 +154,7 @@ button {
 .form[name="register"] .form-group label {
   margin-top: 20px;
 }
-.form .form-group .form-item {
+.form-item {
   border: 1px solid var(--gray-100);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -174,13 +165,13 @@ button {
   overflow: hidden;
   position: relative;
 }
-.form .form-group .form-item input {
+.form-item input {
   width: 100%;
 }
-.form .form-group .form-item input::placeholder {
+.form-item input::placeholder {
   color: var(--gray-200);
 }
-.form .form-group .form-item .btn-eye {
+.form-item .btn-eye {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -194,6 +185,7 @@ button {
 }
 
 .form-group.invalid .form-message {
+  font-style: italic;
   color: #f33a58;
 }
 .form-message {

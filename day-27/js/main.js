@@ -1,14 +1,14 @@
 var modalEl = document.querySelector(".modal");
-var modalOverlay = modalEl.querySelector(".modal-overlay");
-var btnLoginEl = document.querySelector(".btn-login");
-var modalClose = modalEl.querySelector(".modal-close");
+var overlayEl = modalEl.querySelector(".overlay");
+var btnLoginEl = document.querySelector(".header .btn-login");
+var modalClose = modalEl.querySelector(".btn-close");
 
 btnLoginEl.addEventListener("click", function () {
   modalEl.classList.add("active");
 });
 
 // Off modal
-modalOverlay.addEventListener("click", function () {
+overlayEl.addEventListener("click", function () {
   modalEl.classList.remove("active");
 });
 
