@@ -161,19 +161,23 @@ eyesBtn.onclick = function () {
 // Register
 formRegister.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (fullnameRegister.value === "") {
+  if (!fullnameRegister.value) {
     var formGroup = fullnameRegister.parentElement.parentElement;
     formGroup.classList.add("invalid");
     errFullnameRegister.innerHTML = "Vui lòng nhập họ tên";
   }
-  if (emailRegister.value === "") {
+  if (!emailRegister.value) {
     var formGroup = emailRegister.parentElement.parentElement;
     formGroup.classList.add("invalid");
     errEmailRegister.innerHTML = "Vui lòng nhập email";
   }
-  if (passwordRegister.value === "") {
+  if (!passwordRegister.value) {
     var formGroup = passwordRegister.parentElement.parentElement;
     formGroup.classList.add("invalid");
     errPasswordRegister.innerHTML = "Vui lòng nhập password";
+  }
+  if (fullnameRegister.value && emailRegister.value && passwordRegister.value) {
+    modalEl.classList.remove("active");
+    alert("Đăng ký thành công");
   }
 });

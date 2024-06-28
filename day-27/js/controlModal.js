@@ -15,6 +15,51 @@ var errFullnameRegister = formRegister.querySelector(".err-fullname");
 var errEmailRegister = formRegister.querySelector(".err-email");
 var errPasswordRegister = formRegister.querySelector(".err-password");
 
+var modalEl = document.querySelector(".modal");
+var overlayEl = modalEl.querySelector(".overlay");
+var btnLoginEl = document.querySelector(".header .btn-login");
+var modalClose = modalEl.querySelector(".btn-close");
+
+// Open Modal
+btnLoginEl.addEventListener("click", function () {
+  modalEl.classList.add("active");
+  loginBtn.classList.add("active");
+  formLogin.classList.add("active");
+  registerBtn.classList.remove("active");
+  formRegister.classList.remove("active");
+  formLogin.reset();
+  var eyesBtn = formLogin.querySelector(".btn-eye i");
+  if (passwordLogin.type !== "password") {
+    eyesBtn.classList.add("fa-eye-slash");
+    eyesBtn.classList.remove("fa-eye");
+  }
+  if (!emailLogin.value) {
+    var formGroup = getParentElement(emailLogin, ".form-group");
+    formGroup.classList.remove("invalid");
+    errEmailLogin.innerHTML = "";
+  }
+  if (!passwordLogin.value) {
+    var formGroup = getParentElement(passwordLogin, ".form-group");
+    formGroup.classList.remove("invalid");
+    errPasswordLogin.innerHTML = "";
+  }
+});
+
+// Off modal
+overlayEl.addEventListener("click", function () {
+  modalEl.classList.remove("active");
+});
+
+modalClose.addEventListener("click", function () {
+  modalEl.classList.remove("active");
+});
+
+document.addEventListener("keyup", function (e) {
+  if (e.key === "Escape") {
+    modalEl.classList.remove("active");
+  }
+});
+
 function getParentElement(element, selector) {
   return element.closest(selector);
 }
