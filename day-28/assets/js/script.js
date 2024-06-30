@@ -21,6 +21,7 @@ function addTask(e) {
   listContainer.appendChild(li);
   input.value = "";
   input.focus();
+  saveData();
 }
 
 function editTask(li) {
@@ -30,6 +31,7 @@ function editTask(li) {
   li.innerHTML = `
     <input type="text" class="input-box" value="${inputValue}" placeholder="Update Task">
     <button class="add-btn">Add Task</button>`;
+  saveData();
 }
 
 function updateTask(li) {
@@ -45,10 +47,12 @@ function updateTask(li) {
     <span class="text">${inputValue}</span>
     <i class="fa-solid fa-pen-to-square edit-btn"></i>
     <i class="fa-solid fa-trash delete-btn"></i>`;
+  saveData();
 }
 
 function deleteTask(li) {
   li.remove();
+  saveData();
 }
 
 btnAdd.addEventListener("click", addTask);
@@ -70,3 +74,14 @@ listContainer.addEventListener("click", function (e) {
     if (e.key === "Enter") updateTask(li);
   });
 });
+
+function saveData() {
+  localStorage.setItem("tasks", listContainer.innerHTML);
+}
+
+function loadData() {
+  var tasks = localStorage.getItem("tasks");
+  listContainer.innerHTML = tasks;
+}
+
+loadData();
