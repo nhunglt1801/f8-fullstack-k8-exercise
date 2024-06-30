@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+:root {
+  --primary-color: #8758ff;
+  --primary-text: "Poppins", sans-serif;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: var(--primary-text);
+  font-size: 1.6rem;
+  background: var(--primary-color);
+  color: #fff;
+}
+input,
+button {
+  font-family: var(--primary-text);
+  color: #fff;
+  font-size: 1.4rem;
+}
+.todo-app {
+  width: 100%;
+  max-width: 440px;
+  background-color: #1a1a40;
+  padding: 25px 30px 35px;
+  margin: 70px auto;
+  border-radius: 5px;
+}
+.todo-app h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+}
+.row .input-box {
+  background: transparent;
+  flex: 1;
+  padding: 10px;
+}
+.row .input-box::placeholder {
+  color: #b8b8b8;
+}
+
+.add-btn {
+  background: var(--primary-color);
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+#list-container {
+  margin-top: 25px;
+}
+ul li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+ul li.list-item {
+  background: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 15px;
+  height: 43px;
+}
+li .edit-btn,
+li .delete-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+li .edit-btn {
+  right: 40px;
+}
+li .delete-btn {
+  right: 10px;
+}
