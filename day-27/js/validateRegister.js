@@ -83,6 +83,11 @@ emailRegister.oninput = function () {
 
 emailRegister.onblur = function () {
   var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  if (!fullnameRegister.value) {
+    var formGroup = getParentElement(fullnameRegister, ".form-group");
+    formGroup.classList.add("invalid");
+    errFullnameRegister.innerHTML = "Vui lòng nhập họ và tên";
+  }
   if (!passwordRegister.value) {
     var formGroup = getParentElement(passwordRegister, ".form-group");
     formGroup.classList.add("invalid");
@@ -126,6 +131,11 @@ passwordRegister.oninput = function () {
 };
 
 passwordRegister.onblur = function () {
+  if (!fullnameRegister.value) {
+    var formGroup = getParentElement(fullnameRegister, ".form-group");
+    formGroup.classList.add("invalid");
+    errFullnameRegister.innerHTML = "Vui lòng nhập họ và tên";
+  }
   if (!emailRegister.value) {
     var formGroup = getParentElement(emailRegister, ".form-group");
     formGroup.classList.add("invalid");
