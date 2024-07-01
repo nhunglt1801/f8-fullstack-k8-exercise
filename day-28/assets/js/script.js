@@ -51,8 +51,11 @@ function updateTask(li) {
 }
 
 function deleteTask(li) {
-  li.remove();
-  saveData();
+  var confirmDelete = confirm("Are you sure you want to delete this task?");
+  if (confirmDelete) {
+    li.remove();
+    saveData();
+  }
 }
 
 btnAdd.addEventListener("click", addTask);
