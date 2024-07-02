@@ -29,8 +29,9 @@ function editTask(li) {
   li.classList.add("row");
   li.classList.remove("list-item");
   li.innerHTML = `
-    <input type="text" class="input-box" value="${inputValue}" placeholder="Update Task">
+    <input type="text" class="input-box" value="${inputValue}" placeholder="Update Task" >
     <button class="add-btn">Add Task</button>`;
+  li.querySelector(".input-box").focus();
   saveData();
 }
 

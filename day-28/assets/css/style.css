@@ -78,6 +78,13 @@ ul li.list-item {
   padding: 10px 15px;
   height: 43px;
 }
+li .text {
+  display: block;
+  padding-right: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 li .edit-btn,
 li .delete-btn {
   position: absolute;
