@@ -1,6 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const PLAYER_STORAGE_KEY = "F8_PLAYER";
 const heading = $("header h2");
 const cd = $(".cd");
 const cdThumb = $(".cd-thumb");
@@ -15,13 +16,18 @@ const nextBtn = $(".btn-next");
 const prevBtn = $(".btn-prev");
 const randomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
+const playlist = $(".playlist");
 const app = {
   currentIndex: 0,
   isPlaying: false,
   isRandom: false,
   isRepeat: false,
   isDragging: false,
-  lastPercent: 0,
+  config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
+  setConfig: function (key, value) {
+    this.config[key] = value;
+    localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
+  },
   getTimeFormat: function (seconds) {
     var mins = Math.floor(seconds / 60);
     seconds = Math.floor(seconds - mins * 60);
@@ -38,6 +44,13 @@ const app = {
         "https://avatar-ex-swe.nixcdn.com/song/2023/09/18/7/2/8/d/1695032666053_500.jpg",
     },
     {
+      name: "Không thể say",
+      singer: "HIEUTHUHAI",
+      path: "https://x01.nct.vn/NhacCuaTui2038/KhongTheSay-HIEUTHUHAI-9293024.mp3",
+      image:
+        "https://avatar-ex-swe.nixcdn.com/song/2023/04/19/d/2/5/3/1681879735020_500.jpg",
+    },
+    {
       name: "Ngày Đẹp Trời Để Nói Chia Tay",
       singer: "Lou Hoàng",
       path: "https://a01.nct.vn/Warner_Audio241/NgayDepTroiDeNoiChiaTay-LouHoang-15018459.mp3",
@@ -51,11 +64,27 @@ const app = {
       image:
         "https://avatar-ex-swe.nixcdn.com/song/2024/06/17/5/a/6/1/1718594771037_500.jpg",
     },
+    {
+      name: "Rồi Em Sẽ Gặp Một Chàng Trai Khác",
+      singer: "The Masked Singer, Hippohappy",
+      path: "https://a01.nct.vn/Warner_Audio197/RoiEmSeGapMotChangTraiKhacFeatHippohappy-TheMaskedSinger-12419077.mp3",
+      image:
+        "https://avatar-ex-swe.nixcdn.com/song/2023/11/15/d/6/1/0/1700018872628_500.jpg",
+    },
+    {
+      name: "Ngày Mai Người Ta Lấy Chồng",
+      singer: "The Masked Singer, Voi Bản Đôn",
+      path: "https://x01.nct.vn/Warner_Audio172/NgayMaiNguoiTaLayChongFeatVoiBanDon-TheMaskedSinger-10756917.mp3",
+      image:
+        "https://avatar-ex-swe.nixcdn.com/song/2023/11/15/d/6/1/0/1700018872628_500.jpg",
+    },
   ],
   render: function () {
-    const htmls = this.songs.map(function (song) {
+    const _this = this;
+    const htmls = this.songs.map(function (song, index) {
+      const isActive = index === _this.currentIndex ? "active" : "";
       return `
-         <div class="song">
+         <div class="song ${isActive}" data-index="${index}">
                 <div class="thumb" style="background-image: url('${song.image}')">
                 </div>
                 <div class="body">
@@ -70,7 +99,7 @@ const app = {
             </div>
         `;
     });
-    $(".playlist").innerHTML = htmls.join("");
+    playlist.innerHTML = htmls.join("");
   },
   defineProperties: function () {
     Object.defineProperty(this, "currentSong", {
@@ -138,12 +167,12 @@ const app = {
         currentTimer.innerText = _this.getTimeFormat(audio.currentTime);
       }
     };
-
     // Xử lý khi tua song
     progress.onchange = function () {
       if (audio.duration) {
         const seekTime = (this.value / 100) * audio.duration;
         audio.currentTime = seekTime;
+        audio.play();
       }
     };
     // Trạng thái của isDragging khi nhấn chuột xuống
@@ -174,6 +203,8 @@ const app = {
         _this.nextSong();
       }
       audio.play();
+      _this.render();
+      _this.scrollToActiveSong();
     };
     // Xử lý khi prev song
     prevBtn.onclick = function () {
@@ -182,16 +213,20 @@ const app = {
       } else {
         _this.prevSong();
       }
+      audio.play();
+      _this.render();
     };
     // Xử lý bật/ tắt random
     randomBtn.onclick = function () {
       _this.isRandom = !_this.isRandom;
       this.classList.toggle("active", _this.isRandom);
+      _this.setConfig("isRandom", _this.isRandom);
     };
     // Xử lý bật/ tắt repeat
     repeatBtn.onclick = function () {
       _this.isRepeat = !_this.isRepeat;
       this.classList.toggle("active", _this.isRepeat);
+      _this.setConfig("isRepeat", _this.isRepeat);
     };
     // Xử lý next song khi audio ended
     audio.onended = function () {
@@ -201,12 +236,44 @@ const app = {
         nextBtn.click();
       }
     };
+    // Lắng nghe hành vi click vào playlist
+    playlist.onclick = function (e) {
+      const songNode = e.target.closest(".song:not(.active)");
+      console.log(songNode);
+      // Xử lý khi click vào song
+      if (songNode || e.target.closest(".option")) {
+        // Xử lý khi click vào song
+        if (songNode) {
+          _this.currentIndex = +songNode.dataset.index;
+          _this.loadCurrentSong();
+          _this.render();
+          audio.play();
+        }
+        // Xử lý khi click vào song option
+        if (e.target.closest(".option")) {
+        }
+      }
+    };
+  },
+  scrollToActiveSong: function () {
+    setTimeout(function () {
+      $(".song.active").scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 300);
   },
   loadCurrentSong: function () {
     heading.textContent = this.currentSong.name;
     cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
     audio.src = this.currentSong.path;
     // console.log(heading, cdThumb, audio);
+  },
+  loadConfig: function () {
+    this.isRandom = this.config.isRandom;
+    this.isRepeat = this.config.isRepeat;
+
+    // Object.assign(this, this.config);
   },
   nextSong: function () {
     this.currentIndex++;
@@ -230,11 +297,10 @@ const app = {
     this.currentIndex = newIndex;
     this.loadCurrentSong();
   },
-  getDurationCurrentSong: function () {
-    durationTimer.innerText = this.getTimeFormat(audio.duration);
-    console.log(audio.duration);
-  },
   start: function () {
+    // Gán cấu hình từ config vào ứng dụng app
+    this.loadConfig();
+
     // Định nghĩa các thuộc tính cho Object
     this.defineProperties();
 
@@ -246,6 +312,9 @@ const app = {
 
     // Render Playlist
     this.render();
+
+    randomBtn.classList.toggle("active", this.isRandom);
+    repeatBtn.classList.toggle("active", this.isRepeat);
   },
 };
 app.start();
