@@ -41,7 +41,7 @@ var app = {
       return product.id === parseInt(id);
     });
   },
-  handleEvents: function () {
+  handleAddToCartEvents: function () {
     var _this = this;
     btnAddToCarts = tableProducts.querySelectorAll(".btn-add-to-cart");
 
@@ -60,12 +60,11 @@ var app = {
             _this.data[index].quantity += quantity;
           }
           _this.setData();
-          inputQuantity.value = 1;
           _this.renderCart();
         } else {
           alert("Số lượng đã nhập phải lớn hơn 0!");
-          inputQuantity.value = 1;
         }
+        inputQuantity.value = 1;
       });
     });
   },
@@ -98,17 +97,16 @@ var app = {
 
         quantityInputs.forEach(function (input) {
           var newQuantity = parseInt(input.value);
+          var productId = parseInt(input.dataset.id);
+          var index = _this.data.findIndex(function (item) {
+            return item.id === productId;
+          });
           if (newQuantity > 0) {
-            var productId = parseInt(input.dataset.id);
-            var index = _this.data.findIndex(function (item) {
-              return item.id === productId;
-            });
             if (index !== -1) {
               _this.data[index].quantity = newQuantity;
             }
           } else {
-            alert("Số lượng phải lớn hơn 0!");
-            input.value = 1;
+            _this.data.splice(index, 1);
           }
         });
         _this.setData();
@@ -190,7 +188,7 @@ var app = {
   show: function () {
     this.renderProduct();
     this.renderCart();
-    this.handleEvents();
+    this.handleAddToCartEvents();
     this.handleUpdateCartEvents();
     this.handleRemoveAllFromCartEvents();
   },
