@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button {
+  font-size: 1.5rem;
+}
+.player {
+  width: 80%;
+  margin: 30px auto 20px;
+}
+
+.player .play-action {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.player .play-action i {
+  cursor: pointer;
+}
+
+.player .play-timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.progress-bar {
+  position: relative;
+  background: gray;
+  height: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.progress-bar:hover {
+  background: goldenrod;
+}
+
+.progress-bar .timer {
+  display: none;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  transform: translateX(-50%);
+  background-color: blueviolet;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.progress-bar:hover .timer {
+  display: inline-block;
+}
+
+.progress-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: red;
+}
+
+.progress-bar .progress span {
+  position: absolute;
+  top: -2px;
+  right: -6px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: blueviolet;
+}
+.karaoke .play {
+  display: block;
+  margin: 0 auto;
+  background-color: blueviolet;
+  border: none;
+  padding: 10px 15px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.karaoke .play:hover {
+  background-color: rgb(111, 9, 207);
+}
+.karaoke .karaoke-wrap {
+  position: fixed;
+  inset: 0;
+  top: 100%;
+  z-index: 100;
+  color: #fff;
+  background-color: blueviolet;
+  transition: top 0.4s ease;
+  -webkit-transition: top 0.4s ease;
+  -moz-transition: top 0.4s ease;
+  -ms-transition: top 0.4s ease;
+  -o-transition: top 0.4s ease;
+}
+.karaoke .karaoke-wrap.show {
+  top: 0;
+}
+
+.karaoke .container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.karaoke .karaoke-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.karaoke .karaoke-heading h2 {
+  font-size: 4rem;
+}
+.karaoke .karaoke-heading .close {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.karaoke .karaoke-content {
+  font-size: 4rem;
+  font-weight: bolder;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.karaoke .karaoke-content div {
+  text-align: center;
+}
+.karaoke .karaoke-content p {
+  margin: 15px 0;
+}
+.karaoke .karaoke-content .word {
+  position: relative;
+}
