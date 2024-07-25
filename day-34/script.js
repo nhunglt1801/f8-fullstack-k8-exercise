@@ -38,7 +38,12 @@ contentEl.addEventListener("input", function () {
   numberWord.innerText = wordCount;
   numberCharacter.innerText = charCount;
 });
-
+// contentEl paste event
+contentEl.addEventListener("paste", function (e) {
+  e.preventDefault();
+  var text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+});
 // dropdown menu event
 fileBtn.addEventListener("click", function (e) {
   e.stopPropagation();
@@ -64,7 +69,7 @@ function exportTxt(element) {
 }
 // txt btn event
 txtBtn.addEventListener("click", function () {
-  exportTxt(this);
+  exportTxt(contentEl);
 });
 // export pdf function
 function exportPDF(element) {
