@@ -1,5 +1,5 @@
 var countdown = document.querySelector(".countdown");
-var getLinkBtn = document.querySelector("#getLinkBtn");
+var getLinkBtn = document.querySelector("#get-link-btn");
 var countdownTime = 30;
 var timer;
 var lastTime = performance.now();
