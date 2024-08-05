@@ -108,3 +108,20 @@ recognition.addEventListener("result", (event) => {
 recognition.addEventListener("speechend", () => {
   recognition.stop();
 });
+
+recognition.addEventListener("error", (event) => {
+  const error = event.error;
+  if (error) {
+    const css = {
+      borderColor: "red",
+      fontWeight: "bold",
+      color: "red",
+    };
+    Object.assign(result.style, css);
+    if (error === "not-allowed") {
+      updateResult(`Không được phép truy cập vào Micro`, true);
+    } else if (error === "no-speech") {
+      updateResult(`Không nhận diện được giọng nói`, true);
+    }
+  }
+});
