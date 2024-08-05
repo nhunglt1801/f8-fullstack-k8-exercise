@@ -46,8 +46,11 @@ btn.addEventListener("click", () => {
 
 recognition.addEventListener("result", (event) => {
   const value = event.results[0][0].transcript.trim().toLowerCase();
+  if (!value) {
+    return;
+  }
   updateResult(`Đang thực hiện: ${value}`, true);
-
+  updateAction(textSuccess, true);
   setTimeout(() => {
     let url;
     if (
@@ -104,13 +107,4 @@ recognition.addEventListener("result", (event) => {
 
 recognition.addEventListener("speechend", () => {
   recognition.stop();
-  updateAction(textSuccess, true);
-});
-
-recognition.addEventListener("nomatch", () => {
-  updateResult("Không nhận dạng được yêu cầu.", true);
-});
-
-recognition.addEventListener("error", (event) => {
-  updateResult(`Đã xảy ra lỗi trong quá trình nhận dạng: ${event.error}`, true);
 });
