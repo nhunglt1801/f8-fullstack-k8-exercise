@@ -78,3 +78,17 @@ a {
 .content {
   color: #fff;
 }
+
+#loading {
+  color: #fff;
+  background: #333;
+  inset: 0;
+  position: fixed;
+  display: none;
+}
+#loading p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
