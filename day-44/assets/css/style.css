@@ -66,6 +66,7 @@ select {
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -124,8 +125,11 @@ select {
 }
 
 .blog-item .content-blog {
-  width: 75%;
+  width: 100%;
   text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: wrap;
 }
 
 .blog-item .date {
